@@ -2,34 +2,23 @@ const express = require("express");
 
 const router = express.Router();
 
-/* ************************************************************************* */
-// Define Your API Routes Here
-/* ************************************************************************* */
-
-// Import candidate-related actions
 const {
   browse,
   read,
   edit,
   add,
   destroy,
+  authenticate,
 } = require("../../../controllers/candidateActions");
 
-// Route to get a list of candidates
+// Routes CRUD pour les candidats
 router.get("/", browse);
-
-// Route to get a specific candidate by ID
 router.get("/:id", read);
-
-// Route to modify a specific candidate by ID
 router.put("/:id", edit);
-
-// Route to add a new candidate
 router.post("/", add);
-
-// Route to remove a new candidate by ID
 router.delete("/:id", destroy);
 
-/* ************************************************************************* */
+// Route d'authentification
+router.post("/login", authenticate);
 
 module.exports = router;
