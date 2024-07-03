@@ -12,13 +12,14 @@ class CandidateRepository extends AbstractRepository {
   async create(candidate) {
     // Execute the SQL INSERT query to add a new Candidate to the "Candidate" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (name, firstname, profession, portfolio, mentor, description, skills, email, password) values (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (name, firstname, profession, portfolio, mentor, photo, description, skills, email, password) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         candidate.name,
         candidate.firstname,
         candidate.profession,
         candidate.portfolio,
         candidate.mentor,
+        candidate.photo,
         candidate.description,
         candidate.skills,
         candidate.email,
@@ -56,13 +57,14 @@ class CandidateRepository extends AbstractRepository {
 
   async update(candidate) {
     const [edit] = await this.database.query(
-      `update ${this.table} set name =?, firstname =?, profession =?, portfolio =?, mentor =?, description =?, skills =?, email =?, password =? where id =?`,
+      `update ${this.table} set name =?, firstname =?, profession =?, portfolio =?, mentor =?, photo =?, description =?, skills =?, email =?, password =? where id =?`,
       [
         candidate.name,
         candidate.firstname,
         candidate.profession,
         candidate.portfolio,
         candidate.mentor,
+        candidate.photo,
         candidate.description,
         candidate.skills,
         candidate.email,
