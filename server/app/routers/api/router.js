@@ -6,9 +6,17 @@ const router = express.Router();
 // Import And Use Routers Here
 /* ************************************************************************* */
 
-const itemsRouter = require("./items/router");
+const candidateRouter = require("./candidate/router");
 
-router.use("/items", itemsRouter);
+const entrepriseRouter = require("./entreprise/router");
+
+const projetRouter = require("./projet/router");
+
+router.use("/candidate", candidateRouter);
+
+router.use("/entreprise", entrepriseRouter);
+
+router.use("/projet", projetRouter);
 
 /* ************************************************************************* */
 
