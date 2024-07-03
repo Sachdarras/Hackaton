@@ -1,17 +1,45 @@
-
 -- Table Candidate
 CREATE TABLE candidate (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
   name VARCHAR(255) NOT NULL,
   firstname VARCHAR(255) NOT NULL,
-  profession VARCHAR (255) NOT NULL,
+  profession VARCHAR(255) NOT NULL,
   portfolio TEXT NOT NULL,
   mentor BOOLEAN NOT NULL,
   description TEXT NOT NULL,
-  skills text NOT NULL,
-  photo text not null,
+  skills TEXT NOT NULL,
+  photo TEXT NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
   password VARCHAR(255) NOT NULL
+);
+
+-- Table Entreprise
+CREATE TABLE entreprise (
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  location VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL
+);
+
+-- Table MatchRelation
+CREATE TABLE matchRelation (
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  entreprise_id INT UNSIGNED NOT NULL,
+  candidate_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (entreprise_id) REFERENCES entreprise(id),
+  FOREIGN KEY (candidate_id) REFERENCES candidate(id)
+);
+
+-- Table Projet
+CREATE TABLE projet (
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  urlprojet VARCHAR(255) NOT NULL,
+  image VARCHAR(255) NOT NULL,
+  candidate_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (candidate_id) REFERENCES candidate(id)
 );
 
 INSERT INTO candidate (
@@ -27,7 +55,7 @@ INSERT INTO candidate (
   description 
 ) VALUES
   ("Bridget", "Stark", "Developer", "Bridget.Stark@gmail.com", false, "https://api.dicebear.com/9.x/pixel-art/svg?seed=7ZG6dL&hair=long04,short01,long03,short05,long01", "http://jimenez.info/", "bCv6tz+'", "HTML, Pandas, Node.js", "Full-stack Developer with a passion for creating robust web applications. Experienced in front-end and back-end development using technologies such as JavaScript, Python, and Java."),
- ("Adelaide", "Coates", "Data Analyst", "Adelaide.Coates@gmail.com", true, "https://api.dicebear.com/9.x/pixel-art/svg?seed=l5c4QM&hair=long03,short04,long04,long05,short05", "http://www.rasmussen.com/", "AkX+L\\>d", "React, Ruby, Java", "Detail-oriented Data Analyst with strong skills in data collection, cleansing, and analysis. Proficient in Excel, SQL, and data visualization tools such as Tableau and Power BI."),
+  ("Adelaide", "Coates", "Data Analyst", "Adelaide.Coates@gmail.com", true, "https://api.dicebear.com/9.x/pixel-art/svg?seed=l5c4QM&hair=long03,short04,long04,long05,short05", "http://www.rasmussen.com/", "AkX+L\\>d", "React, Ruby, Java", "Detail-oriented Data Analyst with strong skills in data collection, cleansing, and analysis. Proficient in Excel, SQL, and data visualization tools such as Tableau and Power BI."),
   ("Alma", "Hopkins", "Data Analyst", "Alma.Hopkins@gmail.com", false, "https://api.dicebear.com/9.x/pixel-art/svg?seed=CkhkVd&hair=short02,short03,long03,long01,short05", "https://www.gutierrez-fields.biz/", "o(@_C\Cl", "Django, PostgreSQL, JavaScript", "Data Analyst with a background in business intelligence and reporting. Experienced in extracting insights from data to support business strategy and decision-making."),
   ("Michelle", "Oakley", "Manager Data", "Michelle.Oakley@gmail.com", true, "https://api.dicebear.com/9.x/pixel-art/svg?seed=yvGHnw&hair=long05,short04,short01,short03,short05", "http://ortega-bryant.net/", "=C%gN2?.", "Flask, Python, SQL, Keras, Docker", "Data Manager with extensive experience in data governance, quality management, and data strategy development. Skilled in leading data teams and driving data-centric initiatives."),
   ("Carina", "Johnson", "Developer", "Carina.Johnson@gmail.com", true, "https://api.dicebear.com/9.x/pixel-art/svg?seed=tTa3fs&hair=short04,short02,long02,short03,long01", "https://www.johnson-stewart.com/", "~&4s?'-`", "Bash, Kubernetes, TensorFlow, Azure, PostgreSQL", "Full-stack Developer with a passion for creating robust web applications. Experienced in front-end and back-end development using technologies such as JavaScript, Python, and Java."),
@@ -47,32 +75,5 @@ INSERT INTO candidate (
   ("Mikayla", "Nash", "Cyber security", "Mikayla.Nash@gmail.com", true, "https://api.dicebear.com/9.x/pixel-art/svg?seed=LfKoeG&hair=long01,long04,short04,long03,long05", "http://brown.com/", "7qW$~S.E", "Keras, SQL, Numpy, HTML, CSS, C++", "Proficient in cybersecurity tools and technologies, with a focus on safeguarding data integrity and confidentiality. Adept at identifying potential security risks and developing strategies to mitigate them."),
   ("Tiffany", "Clifford", "Data Analyst", "Tiffany.Clifford@gmail.com", true, "https://api.dicebear.com/9.x/pixel-art/svg?seed=KDysgi&hair=long04,short05,short01,short04,long05", "https://dickson-simpson.com/", "REJ`?xu", "Bash, Django, TypeScript, Kubernetes", "Data Analyst with a background in business intelligence and reporting. Experienced in extracting insights from data to support business strategy and decision-making."),
   ("Tessa", "Manning", "Data Analyst", "Tessa.Manning@gmail.com", false, "https://api.dicebear.com/9.x/pixel-art/svg?seed=NZCvgp&hair=short02,long03,short01,long01,long05", "https://chavez.com/", ":g*|I/`4", "TensorFlow, CSS, HTML, C++, PowerShell", "Detail-oriented Data Analyst with strong skills in data collection, cleansing, and analysis. Proficient in Excel, SQL, and data visualization tools such as Tableau and Power BI.");
--- Table Entreprise
 
-CREATE TABLE entreprise (
-  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  name VARCHAR(255) NOT NULL,
-  location VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL UNIQUE,
-  password VARCHAR(255) NOT NULL
-);
 
--- Table MatchRelation
-CREATE TABLE matchRelation (
-  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  entreprise_id INT UNSIGNED NOT NULL,
-  candidate_id INT UNSIGNED NOT NULL,
-  FOREIGN KEY (entreprise_id) REFERENCES Entreprise(id),
-  FOREIGN KEY (candidate_id) REFERENCES Candidate(id)
-);
-
--- Table Projet
-CREATE TABLE projet (
-  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  name VARCHAR(255) NOT NULL,
-  description TEXT,
-  urlprojet VARCHAR(255) NOT NULL,
-  image VARCHAR(255) NOT NULL,
-  candidate_id INT UNSIGNED NOT NULL,
-  FOREIGN KEY (candidate_id) REFERENCES Candidate(id)
-);
