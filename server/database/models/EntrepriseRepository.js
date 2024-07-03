@@ -12,12 +12,39 @@ class EntrepriseRepository extends AbstractRepository {
   async create(entreprise) {
     // Execute the SQL INSERT query to add a new Entreprise to the "Entreprise" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (name, location, email, password) values (?, ?, ?, ?)`,
+      `insert into ${this.table} (
+      name,
+      raison_sociale,
+      location,
+      secteur,
+      siret,
+      lastname,
+      firstname,
+      fonction,
+      telephone,
+      email,
+      password,
+      technologie,
+      profession,
+      contrat,
+      poste
+      ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         entreprise.name,
+        entreprise.raison_sociale,
         entreprise.location,
+        entreprise.secteur,
+        entreprise.siret,
+        entreprise.lastname,
+        entreprise.firstname,
+        entreprise.fonction,
+        entreprise.telephone,
         entreprise.email,
         entreprise.password,
+        entreprise.technologie,
+        entreprise.profession,
+        entreprise.contrat,
+        entreprise.poste,
       ]
     );
 
@@ -51,13 +78,38 @@ class EntrepriseRepository extends AbstractRepository {
 
   async update(entreprise) {
     const [edit] = await this.database.query(
-      `update ${this.table} set name =?, location =?, email =?, password =? where id =?`,
+      `update ${this.table} set
+      name =?,
+      raison_sociale =?,
+      location =?,
+      secteur =?,
+      siret =?,
+      lastname =?,
+      firstname =?,
+      fonction =?,
+      telephone =?,
+      email =?,
+      password =?,
+      technologie =?,
+      profession =?,
+      contrat =?,
+      poste =? where id =?`,
       [
         entreprise.name,
+        entreprise.raison_sociale,
         entreprise.location,
+        entreprise.secteur,
+        entreprise.siret,
+        entreprise.lastname,
+        entreprise.firstname,
+        entreprise.fonction,
+        entreprise.telephone,
         entreprise.email,
         entreprise.password,
-        entreprise.id,
+        entreprise.technologie,
+        entreprise.profession,
+        entreprise.contrat,
+        entreprise.poste,
       ]
     );
     return edit;
