@@ -1,0 +1,100 @@
+.buttonconnexion-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 40px;
+  margin-right: 40px;
+  .button-connexion {
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    color: #000000;
+    background-color: gainsboro;
+    box-shadow: 6px 8px 0 0 #000000;
+    cursor: pointer;
+  }
+}
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+
+  .tittle-container1 {
+    background-color: gainsboro;
+    padding: 10px;
+    transform: rotate(-5.82deg);
+  }
+  .tittle-container2 {
+    text-align: center;
+    background-color: gainsboro;
+    padding: 10px;
+    box-shadow: 6px 8px 0 0 #000000;
+    transform: rotate(-5.82deg);
+  }
+  .tittle-container3 {
+    margin-top: 70px;
+    text-align: center;
+    position: relative;
+  }
+
+  .tittle-container3 h2 {
+    display: inline-block;
+    position: relative;
+  }
+  .tittle-container3::before,
+  .tittle-container3::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 150px;
+    height: 2px;
+    background-color: black;
+  }
+
+  .tittle-container3::before {
+    left: -180px;
+    transform: translateY(-50%);
+  }
+
+  .tittle-container3::after {
+    right: -180px;
+    transform: translateY(-50%);
+  }
+  .radio-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #000000;
+    cursor: pointer;
+  }
+  .radio-container input {
+    margin-right: 20px;
+  }
+  .radio-container label {
+    margin-right: 150px;
+    margin-left: 150px;
+  }
+  .valide-button {
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    color: #000000;
+    background-color: gainsboro;
+    box-shadow: 6px 8px 0 0 #000000;
+    cursor: pointer;
+  }
+}
