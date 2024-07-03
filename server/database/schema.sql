@@ -12,6 +12,7 @@ CREATE TABLE candidate (
   email VARCHAR(255) NOT NULL UNIQUE,
   password VARCHAR(255) NOT NULL
 );
+
 -- Table Entreprise
 CREATE TABLE entreprise (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -40,6 +41,7 @@ CREATE TABLE projet (
   candidate_id INT UNSIGNED NOT NULL,
   FOREIGN KEY (candidate_id) REFERENCES candidate(id)
 );
+
 INSERT INTO candidate (
   name, 
   firstname, 
