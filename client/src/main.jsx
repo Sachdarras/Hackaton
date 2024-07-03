@@ -12,40 +12,40 @@ import Connexion from "./pages/Connexion";
 import Profil from "./pages/Profil";
 import Swipe from "./pages/Swipe";
 
-const router = createBrowserRouter({
-  routes: [
-    {
-      path: "/",
-      element: <App />,
-    },
-    {
-      path: "/home",
-      element: <Home />,
-    },
-    {
-      path: "/registercompany",
-      element: <RegisterCompany />,
-    },
-    {
-      path: "/registeruser",
-      element: <RegisterUser />,
-    },
-    {
-      path: "/connexion",
-      element: <Connexion />,
-    },
-    {
-      path: "/profil",
-      element: <Profil />,
-      children: [
-        {
-          path: "/swipe",
-          element: <Swipe />,
-        },
-      ],
-    },
-  ],
-});
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/registercompany",
+        element: <RegisterCompany />,
+      },
+      {
+        path: "/registeruser",
+        element: <RegisterUser />,
+      },
+      {
+        path: "/connexion",
+        element: <Connexion />,
+      },
+      {
+        path: "/profil",
+        element: <Profil />,
+        children: [
+          {
+            path: "swipe",
+            element: <Swipe />,
+          },
+        ],
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
