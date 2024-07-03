@@ -1,25 +1,42 @@
 -- Table Candidate
 CREATE TABLE candidate (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  name VARCHAR(255) NOT NULL,
-  firstname VARCHAR(255) NOT NULL,
-  profession VARCHAR(255) NOT NULL,
-  portfolio TEXT NOT NULL,
-  mentor BOOLEAN NOT NULL,
-  description TEXT NOT NULL,
-  skills TEXT NOT NULL,
-  photo TEXT NOT NULL,
+  name VARCHAR(30) NOT NULL,
+  firstname VARCHAR(30) NOT NULL,
+  telephone VARCHAR(20) NOT NULL,
+  ville VARCHAR(50) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
-  password VARCHAR(255) NOT NULL
+  password VARCHAR(40) NOT NULL,
+  github TEXT NOT NULL,
+  portfolio TEXT NOT NULL,
+  photo TEXT NOT NULL,
+  profession VARCHAR(50) NOT NULL,
+  hardskills TEXT NOT NULL,
+  softskills TEXT NOT NULL,
+  description TEXT NOT NULL,
+  contrat VARCHAR(50) NOT NULL,
+  poste VARCHAR(70) NOT NULL,
+  mentor BOOLEAN NOT NULL
 );
 
 -- Table Entreprise
 CREATE TABLE entreprise (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  name VARCHAR(255) NOT NULL,
+  name VARCHAR(70) NOT NULL,
+  raison_sociale VARCHAR(50) NOT NULL,
   location VARCHAR(255) NOT NULL,
+  secteur VARCHAR(50) NOT NULL,
+  siret INT UNSIGNED NOT NULL,
+  lastname VARCHAR(50) NOT NULL,
+  firstname VARCHAR(50) NOT NULL,
+  fonction VARCHAR(50) NOT NULL,
+  telephone VARCHAR(20) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
-  password VARCHAR(255) NOT NULL
+  password VARCHAR(255) NOT NULL,
+  technologie TEXT NOT NULL,
+  profession VARCHAR(70) NOT NULL,
+  contrat VARCHAR(50) NOT NULL,
+  poste VARCHAR(70) NOT NULL
 );
 
 -- Table MatchRelation
@@ -42,7 +59,7 @@ CREATE TABLE projet (
   FOREIGN KEY (candidate_id) REFERENCES candidate(id)
 );
 
-INSERT INTO candidate (
+/*INSERT INTO candidate (
   name, 
   firstname, 
   profession,
@@ -75,5 +92,4 @@ INSERT INTO candidate (
   ("Mikayla", "Nash", "Cyber security", "Mikayla.Nash@gmail.com", true, "https://api.dicebear.com/9.x/pixel-art/svg?seed=LfKoeG&hair=long01,long04,short04,long03,long05", "http://brown.com/", "7qW$~S.E", "Keras, SQL, Numpy, HTML, CSS, C++", "Proficient in cybersecurity tools and technologies, with a focus on safeguarding data integrity and confidentiality. Adept at identifying potential security risks and developing strategies to mitigate them."),
   ("Tiffany", "Clifford", "Data Analyst", "Tiffany.Clifford@gmail.com", true, "https://api.dicebear.com/9.x/pixel-art/svg?seed=KDysgi&hair=long04,short05,short01,short04,long05", "https://dickson-simpson.com/", "REJ`?xu", "Bash, Django, TypeScript, Kubernetes", "Data Analyst with a background in business intelligence and reporting. Experienced in extracting insights from data to support business strategy and decision-making."),
   ("Tessa", "Manning", "Data Analyst", "Tessa.Manning@gmail.com", false, "https://api.dicebear.com/9.x/pixel-art/svg?seed=NZCvgp&hair=short02,long03,short01,long01,long05", "https://chavez.com/", ":g*|I/`4", "TensorFlow, CSS, HTML, C++, PowerShell", "Detail-oriented Data Analyst with strong skills in data collection, cleansing, and analysis. Proficient in Excel, SQL, and data visualization tools such as Tableau and Power BI.");
-
-
+  */

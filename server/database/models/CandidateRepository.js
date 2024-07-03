@@ -11,8 +11,42 @@ class CandidateRepository extends AbstractRepository {
       throw new Error("Tous les champs obligatoires doivent être renseignés.");
     }
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (name, firstname, email, password) VALUES (?, ?, ?, ?)`,
-      [name, firstname, email, password]
+      `INSERT INTO ${this.table} (
+        name,
+        firstname,
+        telephone,
+        ville,
+        email,
+        password,
+        github,
+        portfolio,
+        photo,
+        profession,
+        hardskills,
+        softskills,
+        description,
+        contrat,
+        poste,
+        mentor
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        candidate.name,
+        candidate.firstname,
+        candidate.telephone,
+        candidate.ville,
+        candidate.email,
+        candidate.password,
+        candidate.github,
+        candidate.portfolio,
+        candidate.photo,
+        candidate.profession,
+        candidate.hardskills,
+        candidate.softskills,
+        candidate.description,
+        candidate.contrat,
+        candidate.poste,
+        candidate.mentor,
+      ]
     );
     return result.insertId;
   }
@@ -31,33 +65,43 @@ class CandidateRepository extends AbstractRepository {
   }
 
   async update(candidate) {
-    const {
-      id,
-      name,
-      firstname,
-      profession,
-      portfolio,
-      mentor,
-      description,
-      skills,
-      photo,
-      email,
-      password,
-    } = candidate;
     const [result] = await this.database.query(
-      `UPDATE ${this.table} SET name = ?, firstname = ?, profession = ?, portfolio = ?, mentor = ?, description = ?, skills = ?, photo = ?, email = ?, password = ? WHERE id = ?`,
+      `UPDATE ${this.table} SET 
+        name = ?,
+        firstname = ?,
+        telephone = ?,
+        ville = ?,
+        email = ?,
+        password = ?,
+        github = ?,
+        portfolio = ?,
+        photo = ?,
+        profession = ?,
+        hardskills = ?,
+        softskills = ?,
+        description = ?,
+        contrat = ?,
+        poste = ?,
+        mentor = ? 
+      WHERE id = ?`,
       [
-        name,
-        firstname,
-        profession,
-        portfolio,
-        mentor,
-        description,
-        skills,
-        photo,
-        email,
-        password,
-        id,
+        candidate.name,
+        candidate.firstname,
+        candidate.telephone,
+        candidate.ville,
+        candidate.email,
+        candidate.password,
+        candidate.github,
+        candidate.portfolio,
+        candidate.photo,
+        candidate.profession,
+        candidate.hardskills,
+        candidate.softskills,
+        candidate.description,
+        candidate.contrat,
+        candidate.poste,
+        candidate.mentor,
+        candidate.id,
       ]
     );
     return result;
