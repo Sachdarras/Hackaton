@@ -1,9 +1,12 @@
+-- Table Profession
+
+
 -- Table Candidate
 CREATE TABLE Candidate (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
   name VARCHAR(255) NOT NULL,
   firstname VARCHAR(255) NOT NULL,
-  profession VARCHAR(255) NOT NULL,
+  profession VARCHAR (255) NOT NULL,
   portfolio TEXT NOT NULL,
   mentor BOOLEAN NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
@@ -19,7 +22,8 @@ CREATE TABLE Entreprise (
   location VARCHAR(255) NOT NULL,
   salaire VARCHAR(255) NOT NULL,
   contrat VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL UNIQUE
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL
 );
 
 -- Table MatchRelation

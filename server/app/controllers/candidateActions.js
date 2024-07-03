@@ -4,10 +4,10 @@ const tables = require("../../database/tables");
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
   try {
-    // Fetch all items from the database
+    // Fetch all candidates from the database
     const candidates = await tables.candidate.readAll();
 
-    // Respond with the items in JSON format
+    // Respond with the candidates in JSON format
     res.json(candidates);
   } catch (err) {
     // Pass any errors to the error-handling middleware
@@ -18,11 +18,11 @@ const browse = async (req, res, next) => {
 // The R of BREAD - Read operation
 const read = async (req, res, next) => {
   try {
-    // Fetch a specific item from the database based on the provided ID
+    // Fetch a specific candidate from the database based on the provided ID
     const candidate = await tables.candidate.read(req.params.id);
 
-    // If the item is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the item in JSON format
+    // If the candidate is not found, respond with HTTP 404 (Not Found)
+    // Otherwise, respond with the candidate in JSON format
     if (candidate == null) {
       res.sendStatus(404);
     } else {
@@ -39,11 +39,11 @@ const edit = async (req, res, next) => {
   const candidate = { ...req.body, id: req.params.id };
 
   try {
-    // Fetch a specific item from the database based on the provided ID
+    // Fetch a specific candidate from the database based on the provided ID
     await tables.candidate.update(candidate);
 
-    // If the item is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the item in JSON format
+    // If the candidate is not found, respond with HTTP 404 (Not Found)
+    // Otherwise, respond with the candidate in JSON format
     if (candidate == null) {
       res.sendStatus(404);
     } else {
@@ -58,13 +58,13 @@ const edit = async (req, res, next) => {
 
 // The A of BREAD - Add (Create) operation
 const add = async (req, res, next) => {
-  // Extract the item data from the request body
+  // Extract the candidate data from the request body
 
   try {
-    // Insert the item into the database
+    // Insert the candidate into the database
     const insertId = await tables.candidate.create(req.body);
 
-    // Respond with HTTP 201 (Created) and the ID of the newly inserted item
+    // Respond with HTTP 201 (Created) and the ID of the newly inserted candidate
     res.status(201).json({ insertId });
   } catch (err) {
     // Pass any errors to the error-handling middleware
@@ -75,11 +75,11 @@ const add = async (req, res, next) => {
 // The D of BREAD - Destroy (Delete) operation
 const destroy = async (req, res, next) => {
   try {
-    // Fetch a specific item from the database based on the provided ID
+    // Fetch a specific candidate from the database based on the provided ID
     const candidate = await tables.candidate.delete(req.params.id);
 
-    // If the item is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the item in JSON format
+    // If the candidate is not found, respond with HTTP 404 (Not Found)
+    // Otherwise, respond with the candidate in JSON format
     if (candidate == null) {
       res.sendStatus(404);
     } else {

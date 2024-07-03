@@ -4,11 +4,11 @@ const tables = require("../../database/tables");
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
   try {
-    // Fetch all items from the database
-    const enterprises = await tables.enterprise.readAll();
+    // Fetch all entreprises from the database
+    const entreprises = await tables.entreprise.readAll();
 
-    // Respond with the items in JSON format
-    res.json(enterprises);
+    // Respond with the entreprises in JSON format
+    res.json(entreprises);
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);
@@ -18,15 +18,15 @@ const browse = async (req, res, next) => {
 // The R of BREAD - Read operation
 const read = async (req, res, next) => {
   try {
-    // Fetch a specific item from the database based on the provided ID
-    const enterprise = await tables.enterprise.read(req.params.id);
+    // Fetch a specific entreprise from the database based on the provided ID
+    const entreprise = await tables.entreprise.read(req.params.id);
 
-    // If the item is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the item in JSON format
-    if (enterprise == null) {
+    // If the entreprise is not found, respond with HTTP 404 (Not Found)
+    // Otherwise, respond with the entreprise in JSON format
+    if (entreprise == null) {
       res.sendStatus(404);
     } else {
-      res.json(enterprise);
+      res.json(entreprise);
     }
   } catch (err) {
     // Pass any errors to the error-handling middleware
@@ -36,15 +36,15 @@ const read = async (req, res, next) => {
 
 // The E of BREAD - Edit (Update) operation
 const edit = async (req, res, next) => {
-  const enterprise = { ...req.body, id: req.params.id };
+  const entreprise = { ...req.body, id: req.params.id };
 
   try {
-    // Fetch a specific item from the database based on the provided ID
-    await tables.enterprise.update(enterprise);
+    // Fetch a specific entreprise from the database based on the provided ID
+    await tables.entreprise.update(entreprise);
 
-    // If the item is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the item in JSON format
-    if (enterprise == null) {
+    // If the entreprise is not found, respond with HTTP 404 (Not Found)
+    // Otherwise, respond with the entreprise in JSON format
+    if (entreprise == null) {
       res.sendStatus(404);
     } else {
       res.sendStatus(204);
@@ -58,13 +58,13 @@ const edit = async (req, res, next) => {
 
 // The A of BREAD - Add (Create) operation
 const add = async (req, res, next) => {
-  // Extract the item data from the request body
+  // Extract the entreprise data from the request body
 
   try {
-    // Insert the item into the database
-    const insertId = await tables.enterprise.create(req.body);
+    // Insert the entreprise into the database
+    const insertId = await tables.entreprise.create(req.body);
 
-    // Respond with HTTP 201 (Created) and the ID of the newly inserted item
+    // Respond with HTTP 201 (Created) and the ID of the newly inserted entreprise
     res.status(201).json({ insertId });
   } catch (err) {
     // Pass any errors to the error-handling middleware
@@ -75,12 +75,12 @@ const add = async (req, res, next) => {
 // The D of BREAD - Destroy (Delete) operation
 const destroy = async (req, res, next) => {
   try {
-    // Fetch a specific item from the database based on the provided ID
-    const enterprise = await tables.enterprise.delete(req.params.id);
+    // Fetch a specific entreprise from the database based on the provided ID
+    const entreprise = await tables.entreprise.delete(req.params.id);
 
-    // If the item is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the item in JSON format
-    if (enterprise == null) {
+    // If the entreprise is not found, respond with HTTP 404 (Not Found)
+    // Otherwise, respond with the entreprise in JSON format
+    if (entreprise == null) {
       res.sendStatus(404);
     } else {
       res.sendStatus(204);
