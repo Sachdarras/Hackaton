@@ -4,24 +4,20 @@ class EntrepriseRepository extends AbstractRepository {
   constructor() {
     // Call the constructor of the parent class (AbstractRepository)
     // and pass the table name "Entreprise" as configuration
-    super({ table: "Entreprise" });
+    super({ table: "entreprise" });
   }
 
   // The C of CRUD - Create operation
 
-  async create(Entreprise) {
+  async create(entreprise) {
     // Execute the SQL INSERT query to add a new Entreprise to the "Entreprise" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (name, poste, description, location, salaire, contrat, email, password) values (?, ?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (name, location, email, password) values (?, ?, ?, ?)`,
       [
-        Entreprise.name,
-        Entreprise.poste,
-        Entreprise.description,
-        Entreprise.location,
-        Entreprise.salaire,
-        Entreprise.contrat,
-        Entreprise.email,
-        Entreprise.password,
+        entreprise.name,
+        entreprise.location,
+        entreprise.email,
+        entreprise.password,
       ]
     );
 
@@ -53,18 +49,15 @@ class EntrepriseRepository extends AbstractRepository {
   // The U of CRUD - Update operation
   // TODO: Implement the update operation to modify an existing Entreprise
 
-  async update(Entreprise) {
+  async update(entreprise) {
     const [edit] = await this.database.query(
-      `update ${this.table} set name =?, poste =?, description =?, location =?, salaire =?, contrat =?, email =?, password =? where id =?`,
+      `update ${this.table} set name =?, location =?, email =?, password =? where id =?`,
       [
-        Entreprise.name,
-        Entreprise.poste,
-        Entreprise.description,
-        Entreprise.location,
-        Entreprise.salaire,
-        Entreprise.contrat,
-        Entreprise.email,
-        Entreprise.password,
+        entreprise.name,
+        entreprise.location,
+        entreprise.email,
+        entreprise.password,
+        entreprise.id,
       ]
     );
     return edit;

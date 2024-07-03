@@ -11,9 +11,9 @@ const tables = {};
 /* ************************************************************************* */
 
 // Register each repository as data access point for its table
-tables.Candidate = new CandidateRepository();
-tables.Entreprise = new EntrepriseRepository();
-tables.Projet = new ProjetRepository();
+tables.candidate = new CandidateRepository();
+tables.entreprise = new EntrepriseRepository();
+tables.projet = new ProjetRepository();
 
 /* ************************************************************************* */
 

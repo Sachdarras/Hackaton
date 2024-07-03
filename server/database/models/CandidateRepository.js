@@ -4,23 +4,25 @@ class CandidateRepository extends AbstractRepository {
   constructor() {
     // Call the constructor of the parent class (AbstractRepository)
     // and pass the table name "Candidate" as configuration
-    super({ table: "Candidate" });
+    super({ table: "candidate" });
   }
 
   // The C of CRUD - Create operation
 
-  async create(Candidate) {
+  async create(candidate) {
     // Execute the SQL INSERT query to add a new Candidate to the "Candidate" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (name, firstname, profession, portfolio, projet, mentor, email) values (?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (name, firstname, profession, portfolio, mentor, description, skills, email, password) values (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
-        Candidate.name,
-        Candidate.firstname,
-        Candidate.profession,
-        Candidate.portfolio,
-        Candidate.projet,
-        Candidate.mentor,
-        Candidate.email,
+        candidate.name,
+        candidate.firstname,
+        candidate.profession,
+        candidate.portfolio,
+        candidate.mentor,
+        candidate.description,
+        candidate.skills,
+        candidate.email,
+        candidate.password,
       ]
     );
 
@@ -52,17 +54,20 @@ class CandidateRepository extends AbstractRepository {
   // The U of CRUD - Update operation
   // TODO: Implement the update operation to modify an existing Candidate
 
-  async update(Candidate) {
+  async update(candidate) {
     const [edit] = await this.database.query(
-      `update ${this.table} set name =?, firstname =?, profession =?, portfolio =?, projet =?, mentor =?, email =? where id =?`,
+      `update ${this.table} set name =?, firstname =?, profession =?, portfolio =?, mentor =?, description =?, skills =?, email =?, password =? where id =?`,
       [
-        Candidate.name,
-        Candidate.firstname,
-        Candidate.profession,
-        Candidate.portfolio,
-        Candidate.projet,
-        Candidate.mentor,
-        Candidate.email,
+        candidate.name,
+        candidate.firstname,
+        candidate.profession,
+        candidate.portfolio,
+        candidate.mentor,
+        candidate.description,
+        candidate.skills,
+        candidate.email,
+        candidate.password,
+        candidate.id,
       ]
     );
     return edit;
