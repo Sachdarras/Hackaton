@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import logo from "../assets/logo.png";
+import leftarrow from "../assets/Flecheleft.png";
 
 import "../main.scss";
 
@@ -61,9 +63,9 @@ function RegisterUser() {
     <>
       <div className="headFormUser">
         <Link to="/">
-          <span>Retour</span>
+          <img className="leftarrow1" src={leftarrow} alt="leftarrow" />
         </Link>
-        <img src="#" alt="logo" />
+        <img className="registerLogo" src={logo} alt="logo" />
         <Link to="/connexion">
           <button className="button-connexion" type="button">
             Connexion
@@ -71,87 +73,88 @@ function RegisterUser() {
         </Link>
       </div>
       <div className="formUser">
-        <h1 className="formTitle">Je suis</h1>
+        <h1 className="formTitle1">Je suis</h1>
         <form onSubmit={handleAddUser}>
-          <div className="formGroup">
-            <label className="formLabel" htmlFor="name">
-              Nom
-            </label>
-            <input
-              type="text"
-              id="name"
-              placeholder="Entrez votre nom"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="formGroup">
-            <label className="formLabel" htmlFor="firstname">
-              Prénom
-            </label>
-            <input
-              type="text"
-              id="firstname"
-              placeholder="Entrez votre prénom"
-              value={firstname}
-              onChange={(e) => setFirstName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="formGroup">
-            <label className="formLabel" htmlFor="telephone">
-              Numéro de Téléphone
-            </label>
-            <input
-              type="text"
-              id="telephone"
-              placeholder="Entrez votre numéro de téléphone"
-              value={telephone}
-              onChange={(e) => setTelephone(e.target.value)}
-              required
-            />
-          </div>
-          <div className="formGroup">
-            <label className="formLabel" htmlFor="ville">
-              Ville
-            </label>
-            <input
-              type="text"
-              id="ville"
-              placeholder="Entrez le nom de votre ville"
-              value={ville}
-              onChange={(e) => setVille(e.target.value)}
-              required
-            />
-          </div>
-          <div className="formGroup">
-            <label className="formLabel" htmlFor="email">
-              E-mail
-            </label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Entrez votre email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="formGroup">
-            <label className="formLabel" htmlFor="password">
-              Mot de passe
-            </label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Entrez votre mot de passe"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <div className="formGroup">
+          <div className="formPartOne">
+            <div className="formGroup div1">
+              <label className="formLabel" htmlFor="name">
+                Nom
+              </label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Entrez votre nom"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="formGroup div2">
+              <label className="formLabel" htmlFor="firstname">
+                Prénom
+              </label>
+              <input
+                type="text"
+                id="firstname"
+                placeholder="Entrez votre prénom"
+                value={firstname}
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="formGroup div3">
+              <label className="formLabel" htmlFor="telephone">
+              Téléphone
+              </label>
+              <input
+                type="text"
+                id="telephone"
+                placeholder="Entrez votre numéro de téléphone"
+                value={telephone}
+                onChange={(e) => setTelephone(e.target.value)}
+                required
+              />
+            </div>
+            <div className="formGroup div4">
+              <label className="formLabel" htmlFor="ville">
+                Ville
+              </label>
+              <input
+                type="text"
+                id="ville"
+                placeholder="Entrez le nom de votre ville"
+                value={ville}
+                onChange={(e) => setVille(e.target.value)}
+                required
+              />
+            </div>
+            <div className="formGroup div5">
+              <label className="formLabel" htmlFor="email">
+                E-mail
+              </label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Entrez votre email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="formGroup div6">
+              <label className="formLabel" htmlFor="password">
+                Mot de passe
+              </label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Entrez votre mot de passe"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+          <div className="formGroup div7">
             <label className="formLabel" htmlFor="github">
               Lien Github
             </label>
@@ -163,7 +166,7 @@ function RegisterUser() {
               onChange={(e) => setGithub(e.target.value)}
             />
           </div>
-          <div className="formGroup">
+          <div className="formGroup div8">
             <label className="formLabel" htmlFor="portfolio">
               Lien Portfolio
             </label>
@@ -175,7 +178,8 @@ function RegisterUser() {
               onChange={(e) => setPortfolio(e.target.value)}
             />
           </div>
-          {/* <h1 className="formTitle">Photo de profil</h1>
+        </div>
+          {/* <h1 className="formTitle1">Photo de profil</h1>
         <div className="formGroup">
           <label className="formLabel" htmlFor="photo">Avatar</label>
           <input
@@ -187,7 +191,9 @@ function RegisterUser() {
             // accept="image/png, image/jpeg, image/svg"
           />
         </div> */}
-          <h1 className="formTitle">Métier et compétences</h1>
+        <div className="bloc2">
+          <h1 className="formTitle2">Métier et compétences</h1>
+          <div className="grid2">
           <div className="formGroup">
             <label className="formLabel" htmlFor="profession">
               Votre profession
@@ -239,7 +245,10 @@ function RegisterUser() {
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-          <h1 className="formTitle">Je recherche</h1>
+          </div>
+          </div>
+          <div className="bloc3">
+          <h1 className="formTitle3">Je recherche</h1>
           <div className="formGroup">
             <label className="formLabel" htmlFor="contrat">
               Type de contrat
@@ -256,6 +265,7 @@ function RegisterUser() {
           <button className="account-button" type="submit">
             Valider
           </button>
+          </div>
         </form>
       </div>
     </>
