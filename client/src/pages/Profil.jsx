@@ -34,7 +34,6 @@ function Profil() {
           <li>{candidate.location}</li>
         </ul>
         <ul className="ul-mgp">
-          <li>{candidate.mobile}</li>
           <li>
             <a
               href={candidate.github}
