@@ -1,15 +1,8 @@
-import { Outlet } from "react-router-dom";
-
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-
 function Profil() {
   return (
-    <>
-      <Header />
-      <Outlet />
-      <Footer />;
-    </>
+    <div>
+      <h1>coucou</h1>
+    </div>
   );
 }
 
