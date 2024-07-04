@@ -6,10 +6,12 @@
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-image: url("../../src/assets/wondertechprofil.jpg");
+  background-position: center;
 
-  ul {
+  .ul-npl {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     list-style-type: none;
@@ -18,15 +20,86 @@
 
   li {
     margin-bottom: 10px;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 50px;
   }
 
   img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 2px solid #ccc;
+    width: 153px;
+    height: 153px;
+    flex-shrink: 0;
+    border-radius: 153px;
+    border: 4px solid var(--colors-color-tertiary-2, #000);
+    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+    box-shadow: 7px 4px 0px 0px #000;
   }
 }
+
+.ul-mgp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+  margin: 40px;
+
+  h2 {
+    position: relative;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 30px;
+    text-align: center;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 264px; /* Ajuster selon vos besoins */
+      height: 3px; /* Ajuster selon vos besoins */
+      background-color: black; /* Ajuster selon vos besoins */
+    }
+
+    &::before {
+      left: -350px; /* Ajuster selon vos besoins */
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      right: -350px; /* Ajuster selon vos besoins */
+      transform: translateY(-50%);
+    }
+  }
+
+  p {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 60%;
+    padding: 20px;
+  }
+}
+
 .skills-list {
   list-style-type: none;
   padding: 0;
@@ -40,6 +113,8 @@
   padding: 4px 12px;
   margin-right: 8px;
   margin-bottom: 8px;
+  width: auto;
+  font-size: 2rem;
 }
 
 .job-tag {
@@ -50,4 +125,6 @@
   padding: 4px 12px;
   margin-bottom: 8px;
   font-weight: bold;
+  width: auto;
+  font-size: 2rem;
 }

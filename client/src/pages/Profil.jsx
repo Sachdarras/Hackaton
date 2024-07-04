@@ -25,12 +25,15 @@ function Profil() {
   return (
     <>
       <div className="information-container">
-        <ul>
+        <ul className="ul-npl">
+          {" "}
+          <li>{`${candidate.name} ${candidate.surname}`}</li>
           <li>
             <img src={candidate.photo} alt="avatar" />
           </li>
-          <li>{`${candidate.name} ${candidate.surname}`}</li>
           <li>{candidate.location}</li>
+        </ul>
+        <ul className="ul-mgp">
           <li>{candidate.mobile}</li>
           <li>
             <a
@@ -53,13 +56,19 @@ function Profil() {
         </ul>
       </div>
       <div className="skills-container">
-        <h2>Description</h2>
+        <div className="profil-tittle-container">
+          <h2>Description</h2>
+        </div>
         <p>{candidate.description}</p>
-        <h2>Métier</h2>
+        <div className="profil-tittle-container">
+          <h2>Métier</h2>
+        </div>
         <ul>
           <li className="job-tag">{candidate.profession}</li>
         </ul>
-        <h2>Hard Skills</h2>
+        <div className="profil-tittle-container">
+          <h2>Hard Skills</h2>
+        </div>
         <ul className="skills-list">
           {hardSkills.map((skill) => (
             <li key={`hardSkill-${skill}`} className="skill-tag">
@@ -67,7 +76,9 @@ function Profil() {
             </li>
           ))}
         </ul>
-        <h2>Soft Skills</h2>
+        <div className="profil-tittle-container">
+          <h2>Soft Skills</h2>
+        </div>
         <ul className="skills-list">
           {softSkills.map((skill) => (
             <li key={`softSkill-${skill}`} className="skill-tag">
@@ -75,7 +86,9 @@ function Profil() {
             </li>
           ))}
         </ul>
-        <h2>Recherche</h2>
+        <div className="profil-tittle-container">
+          <h2>Recherche</h2>
+        </div>
         <ul className="skills-list">
           {typesContrat.map((type) => (
             <li key={`typeContrat-${type}`} className="skill-tag">
