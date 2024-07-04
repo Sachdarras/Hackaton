@@ -1,0 +1,10 @@
+.slick-slide > div {
+  display: flex !important;
+  justify-content: center !important;
+  padding: 50px;
+  background-color: #ffebcf;
+}
+
+.user-card {
+  width: 100%;
+}

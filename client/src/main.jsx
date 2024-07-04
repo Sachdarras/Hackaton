@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Pages sans Outlet
 import Home from "./pages/Home";
+import UsersList from "./pages/UsersList";
+import CompaniesList from "./pages/CompaniesList";
 import RegisterCompany from "./pages/RegisterCompany";
 import RegisterUser from "./pages/RegisterUser";
 import Connexion from "./pages/Connexion";
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/users",
+    element: <UsersList />,
+  },
+  {
+    path: "/companies",
+    element: <CompaniesList />,
   },
   {
     path: "/registercompany",
