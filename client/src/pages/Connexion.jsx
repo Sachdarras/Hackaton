@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logo from "../assets/logo.png";
+import leftarrow from "../assets/Flecheleft.png";
 
 function Connexion() {
   const [email, setEmail] = useState("");
@@ -48,64 +49,62 @@ function Connexion() {
   };
 
   return (
-    <>
+    <div className="connexion-container">
       <Link to="/">
-        <span>Retour</span>
+        <img className="leftarrow" src={leftarrow} alt="leftarrow" />
       </Link>
-      <div className="connexion-container">
-        <div className="logo-container">
-          <img src={logo} alt="logo" />
-        </div>
-        <div className="form-container">
-          <input
-            className="form-input"
-            type="email"
-            value={email}
-            onChange={handleEmailChange}
-            placeholder="Email"
-          />
-          <input
-            className="form-input
-          "
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-            placeholder="Mot de passe"
-          />
-          <div className="radio-container">
-            <label>
-              <input
-                className="radio-input"
-                type="radio"
-                name="userType"
-                value="candidate"
-                checked={userType === "candidate"}
-                onChange={(e) => setUserType(e.target.value)}
-              />
-              Candidat
-            </label>
-            <label>
-              <input
-                className="radio-input"
-                type="radio"
-                name="userType"
-                value="enterprise"
-                checked={userType === "enterprise"}
-                onChange={(e) => setUserType(e.target.value)}
-              />
-              Entreprise
-            </label>
-          </div>
-          <button
-            className="button-validate-co"
-            type="button"
-            onClick={handleValidation}
-          >
-            Valider
-          </button>
-        </div>
+      <div className="logo-container">
+        <img src={logo} alt="logo" />
       </div>
-    </>
+      <div className="form-container">
+        <input
+          className="form-input"
+          type="email"
+          value={email}
+          onChange={handleEmailChange}
+          placeholder="Email"
+        />
+        <input
+          className="form-input
+          "
+          type="password"
+          value={password}
+          onChange={handlePasswordChange}
+          placeholder="Mot de passe"
+        />
+        <div className="radio-container">
+          <label>
+            <input
+              className="radio-input"
+              type="radio"
+              name="userType"
+              value="candidate"
+              checked={userType === "candidate"}
+              onChange={(e) => setUserType(e.target.value)}
+            />
+            Candidate
+          </label>
+          <label>
+            <input
+              className="radio-input"
+              type="radio"
+              name="userType"
+              value="enterprise"
+              checked={userType === "enterprise"}
+              onChange={(e) => setUserType(e.target.value)}
+            />
+            Entreprise
+          </label>
+        </div>
+        <button
+          className="button-validate-co"
+          type="button"
+          onClick={handleValidation}
+        >
+          Valider
+        </button>
+      </div>
+    </div>
   );
 }
 
