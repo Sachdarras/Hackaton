@@ -1,15 +1,83 @@
+@use "Variable.scss" as *;
+
 .connexion-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+
+  background-image: url("../../src/assets/connexion_home.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logo-container {
+  top: 0px;
+  position: relative;
+  z-index: 1;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  top: -300px;
+
+  .form-input {
+    width: 525px;
+    height: 90px;
+    flex-shrink: 0;
+    margin: 20px;
+    border: 5px solid #000;
+    background: #fff;
+  }
+
+  ::placeholder {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: $tertiary-color-black;
+  }
+}
+
+.radio-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 140px;
+  font-size: 40px;
+
+  .radio-input {
+    width: 30px; /* Ajustez la largeur du bouton radio */
+    height: 30px; /* Ajustez la hauteur du bouton radio */
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Ajustez l'espace entre le bouton radio et le texte */
+  }
 }
 .button-validate-co {
+  display: flex;
   margin-top: 30px;
+  width: 285px;
+  height: 69px;
+  padding: 15px 90px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  background: #ff4001;
+  box-shadow: 10px 10px 0px 0px #000;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: $tertiary-color-white;
 }

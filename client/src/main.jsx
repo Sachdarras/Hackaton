@@ -6,11 +6,12 @@ import Home from "./pages/Home";
 import RegisterCompany from "./pages/RegisterCompany";
 import RegisterUser from "./pages/RegisterUser";
 import Connexion from "./pages/Connexion";
-import ProfilEntreprise from "./pages/ProfilEntreprise"; // Assurez-vous que ce fichier contient bien le composant attendu
+import ProfilEntreprise from "./pages/ProfilEntreprise";
 
 // Pages avec Outlet
 import Profil from "./pages/Profil";
-import App from "./pages/App"; // Importer App ici si ce n'est pas déjà fait
+import App from "./pages/App";
+import Match from "./pages/Match";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/connexion",
     element: <Connexion />,
+  },
+  {
+    path: "/match",
+    element: <Match />,
   },
   {
     path: "/profil",

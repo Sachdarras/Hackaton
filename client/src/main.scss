@@ -7,6 +7,8 @@
 @import "./Styles/Nav.scss";
 @import "./Styles/Profil.scss";
 @import "./Styles/profilentreprise.scss";
+@import "./Styles/match.scss";
+
 @font-face {
   font-family: "proxima_nova";
   src: url("../src/assets/images/Demo_Fonts/Fontspring-DEMO-proximanova-regular.otf");
@@ -15,7 +17,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 .bangers-regular {

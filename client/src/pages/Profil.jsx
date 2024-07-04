@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Profil() {
-  const [candidate, setCandidate] = useState({}); // Utilisation d'un objet vide comme valeur initiale
+  const [candidate, setCandidate] = useState({});
 
   useEffect(() => {
     const loggedInCandidate = localStorage.getItem("loggedInCandidate");
@@ -11,10 +11,9 @@ function Profil() {
   }, []);
 
   if (!candidate || Object.keys(candidate).length === 0) {
-    return <div>Loading...</div>; // Vérification que candidate est défini et non vide
+    return <div>Loading...</div>;
   }
 
-  // Extraction des valeurs des tableaux en vérifiant leur existence
   const hardSkills = candidate.hardskills
     ? candidate.hardskills.split(", ")
     : [];

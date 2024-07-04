@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import logo from "../assets/logo.png";
 
 function Connexion() {
   const [email, setEmail] = useState("");
@@ -47,38 +48,52 @@ function Connexion() {
   };
 
   return (
-    <div>
+    <>
       <Link to="/">
         <span>Retour</span>
       </Link>
       <div className="connexion-container">
+        <div className="logo-container">
+          <img src={logo} alt="logo" />
+        </div>
         <div className="form-container">
-          <div>
-            <input
-              type="email"
-              value={email}
-              onChange={handleEmailChange}
-              placeholder="Email"
-            />
-          </div>
-          <div>
-            <input
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
-              placeholder="Mot de passe"
-            />
-          </div>
-          <div>
+          <input
+            className="form-input"
+            type="email"
+            value={email}
+            onChange={handleEmailChange}
+            placeholder="Email"
+          />
+          <input
+            className="form-input
+          "
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+            placeholder="Mot de passe"
+          />
+          <div className="radio-container">
             <label>
-              Type d'utilisateur:
-              <select
-                value={userType}
+              <input
+                className="radio-input"
+                type="radio"
+                name="userType"
+                value="candidate"
+                checked={userType === "candidate"}
                 onChange={(e) => setUserType(e.target.value)}
-              >
-                <option value="candidate">Candidat</option>
-                <option value="enterprise">Entreprise</option>
-              </select>
+              />
+              Candidat
+            </label>
+            <label>
+              <input
+                className="radio-input"
+                type="radio"
+                name="userType"
+                value="enterprise"
+                checked={userType === "enterprise"}
+                onChange={(e) => setUserType(e.target.value)}
+              />
+              Entreprise
             </label>
           </div>
           <button
@@ -90,7 +105,7 @@ function Connexion() {
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
