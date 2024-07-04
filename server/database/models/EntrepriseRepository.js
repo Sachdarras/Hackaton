@@ -10,26 +10,26 @@ class EntrepriseRepository extends AbstractRepository {
   async create(entreprise) {
     // Execute the SQL INSERT query to add a new entreprise to the "entreprise" table
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (
-        image,
-        raison_sociale,
-        location,
-        secteur,
-        siret,
-        lastname,
-        firstname,
-        fonction,
-        telephone,
-        email,
-        password,
-        technologie,
-        profession,
-        contrat,
-        poste
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (
+      image,
+      raisonSociale,
+      location,
+      secteur,
+      siret,
+      lastname,
+      firstname,
+      fonction,
+      telephone,
+      email,
+      password,
+      technologie,
+      profession,
+      contrat,
+      poste
+      ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         entreprise.image,
-        entreprise.raison_sociale,
+        entreprise.raisonSociale,
         entreprise.location,
         entreprise.secteur,
         entreprise.siret,
@@ -70,28 +70,26 @@ class EntrepriseRepository extends AbstractRepository {
   }
 
   async update(entreprise) {
-    // Execute the SQL UPDATE query to modify an existing entreprise in the "entreprise" table
-    const [result] = await this.database.query(
-      `UPDATE ${this.table} SET
-        image = ?,
-        raison_sociale = ?,
-        location = ?,
-        secteur = ?,
-        siret = ?,
-        lastname = ?,
-        firstname = ?,
-        fonction = ?,
-        telephone = ?,
-        email = ?,
-        password = ?,
-        technologie = ?,
-        profession = ?,
-        contrat = ?,
-        poste = ?
-      WHERE id = ?`,
+    const [edit] = await this.database.query(
+      `update ${this.table} set
+      image =?,
+      raisonSociale =?,
+      location =?,
+      secteur =?,
+      siret =?,
+      lastname =?,
+      firstname =?,
+      fonction =?,
+      telephone =?,
+      email =?,
+      password =?,
+      technologie =?,
+      profession =?,
+      contrat =?,
+      poste =? where id =?`,
       [
         entreprise.image,
-        entreprise.raison_sociale,
+        entreprise.raisonSociale,
         entreprise.location,
         entreprise.secteur,
         entreprise.siret,

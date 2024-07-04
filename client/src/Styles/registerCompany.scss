@@ -1,0 +1,35 @@
+.headFormCompany {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-right: 40px;
+  .button-connexion {
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    color: #000000;
+    background-color: gainsboro;
+    box-shadow: 6px 8px 0 0 #000000;
+    cursor: pointer;
+  }
+}
+
+.formTitle {
+  margin: 30px 0;
+}
+
+.formCompany {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .formGroup {
+    margin: 10px 0;
+    .formLabel {
+      margin: 0 10px;
+    }
+  }
+}

@@ -247,7 +247,7 @@ function RegisterUser() {
             <input
               type="text"
               id="contrat"
-              placeholder="Type de contrat recherché"
+              placeholder="Quel type de contrat recherchez vous ?"
               value={contrat}
               onChange={(e) => setContrat(e.target.value)}
               required
