@@ -58,7 +58,7 @@ CREATE TABLE projet (
   FOREIGN KEY (candidate_id) REFERENCES candidate(id)
 );
 
-/*INSERT INTO candidate (
+INSERT INTO candidate (
   name, 
   firstname, 
   profession,
