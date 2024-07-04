@@ -23,7 +23,7 @@ function Profil() {
   const typesContrat = candidate.contrat ? candidate.contrat.split(", ") : [];
 
   return (
-    <>
+    <div className="bg-profil">
       <div className="information-container">
         <ul className="ul-npl">
           {" "}
@@ -54,6 +54,7 @@ function Profil() {
           </li>
         </ul>
       </div>
+
       <div className="skills-container">
         <div className="profil-tittle-container">
           <h2>Description</h2>
@@ -96,7 +97,7 @@ function Profil() {
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 }
 

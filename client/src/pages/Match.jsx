@@ -21,6 +21,7 @@ function Match() {
 
     return (
       <div>
+        <h1>Mes Matchs</h1>
         <img
           className="logo-entreprise"
           src={entreprise.image}
