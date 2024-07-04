@@ -1,95 +1,187 @@
-.profil-enterprise-container {
-  max-width: 800px;
-  margin: 20px auto;
+@font-face {
+  font-family: "proxima_nova";
+  src: url("../src/assets/images/Demo_Fonts/Fontspring-DEMO-proximanova-regular.otf");
+}
+
+.enterprise-information {
+  max-width: 100vw;
+  margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-image: url("../../src/assets/wondertechprofil.jpg");
+  background-position: center;
+
+  .enterprise-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      font-family: "Bangers", system-ui;
+    }
+
+    img {
+      width: 180px;
+      height: 180px;
+      padding: 50px;
+      flex-shrink: 0;
+      border-radius: 153px;
+      border: 4px solid var(--colors-color-tertiary-2, #000);
+      background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+      box-shadow: 7px 4px 0px 0px #000;
+    }
+  }
 }
 
-.enterprise-section {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  background-color: #fff;
-  margin-bottom: 20px;
-}
-
-.enterprise-header {
+.ul-mgp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-bottom: 20px;
+
+  a {
+    color: inherit;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &:hover {
+      color: #ff4001;
+    }
+  }
 }
 
-.enterprise-header h1 {
-  font-size: 1.5em;
-  margin: 10px 0;
-}
-
-.enterprise-header p {
-  font-size: 1.2em;
-  margin: 5px 0;
-}
-
-.enterprise-logo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  margin-bottom: 10px;
-}
-
-.enterprise-info {
-  margin-bottom: 20px;
-}
-
-.enterprise-details {
-  margin-bottom: 20px;
-}
-
-.enterprise-tags {
-  margin-bottom: 20px;
-}
-
-.enterprise-technologies {
-  margin-bottom: 20px;
-}
-
-.enterprise-technologies ul {
+.enterprise-skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   list-style-type: none;
   padding: 0;
-  margin-top: 0;
-}
-
-.enterprise-technologies .tech-tag {
-  display: inline-block;
-  background-color: #f0f0f0;
-  color: #333;
-  border-radius: 20px;
-  padding: 4px 12px;
-  margin-right: 8px;
-  margin-bottom: 8px;
-}
-
-.enterprise-recruiter {
   margin-top: 20px;
-}
+  margin: 50px;
 
-.enterprise-recruiter h2 {
-  font-size: 1.3em;
-  margin-bottom: 10px;
-}
+  .enterprise-section {
+    h2 {
+      position: relative;
+      font-size: 64px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin: 50px;
+      text-align: center;
+      background-color: #b352ff;
+      width: 500px;
+      box-shadow: 7px 10px 0px 0px #000;
+    }
+    .profession {
+      font-family: "proxima_nova";
+      color: #ff4001;
+    }
+    li {
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      width: 60%;
+      padding: 20px;
+    }
+  }
 
-.enterprise-recruiter p {
-  margin: 5px 0;
-  font-size: 1.1em;
-}
+  .enterprise-skills-list {
+    list-style-type: none;
+    padding: 0;
 
-.enterprise-recruiter a {
-  color: #007bff;
-  text-decoration: none;
-}
+    .enterprise-skill-tag {
+      display: inline-block;
+      color: black;
+      border-radius: 20px;
+      padding: 4px 12px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      width: auto;
+      font-size: 2rem;
+      font-family: "proxima_nova";
+      font-weight: bold;
+    }
+  }
 
-.enterprise-recruiter a:hover {
-  text-decoration: underline;
+  .enterprise-job {
+    display: inline-block;
+    color: black;
+    border-radius: 20px;
+    padding: 4px 12px;
+    margin-bottom: 8px;
+    width: auto;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .enterprise-recruiter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: bold;
+      line-height: normal;
+      font-family: "proxima_nova";
+    }
+
+    a {
+      color: inherit;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      font-family: "proxima_nova";
+      font-weight: bold;
+
+      &:hover {
+        color: #ff4001;
+      }
+    }
+  }
+}
+.contact-button {
+  display: flex;
+  margin-top: 30px;
+  width: 285px;
+  height: 69px;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #ff4001;
+  box-shadow: 10px 10px 0px 0px #000;
+  font-size: 48px;
+  font-weight: 400;
+  color: #fff; // Assuming $tertiary-color-white is white
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    box-shadow: none;
+    background: darken(#ff4001, 10%);
+  }
 }

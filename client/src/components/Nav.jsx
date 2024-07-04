@@ -15,6 +15,9 @@ function Nav() {
             <Link to="/profil">Mon profil</Link>
           </li>
           <li>
+            <Link to="/profil/profilentreprise">Mon profil Entreprise</Link>
+          </li>
+          <li>
             <Link to="/users">Users</Link>
           </li>
           <li>
