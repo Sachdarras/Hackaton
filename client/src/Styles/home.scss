@@ -15,14 +15,20 @@
     padding-right: 10px;
     padding-left: 10px;
     padding: 10px 20px;
-    font-size: 1.2rem;
+    font-size: 3rem;
     font-weight: 600;
-    border-radius: 5px;
-    border: 1px solid #000000;
-    color: #000000;
-    background-color: gainsboro;
+    width: 264px;
+    height: 90px;
+    color: #ffffff;
+    border: 1px $secondary-color-orange solid;
+    background-color: $secondary-color-orange;
     box-shadow: 6px 8px 0 0 #000000;
     cursor: pointer;
+  }
+
+  .button-connexion:hover {
+    box-shadow: none;
+    background: darken(#ff4001, 10%);
   }
 }
 .home-container {
@@ -30,21 +36,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  margin-top: 160px;
   .tittle-container1 {
-    background-color: gainsboro;
+    background-color: $primary-color-yellow;
     padding: 10px;
+    font-size: 1.7rem;
+    font-weight: 100;
+    margin-bottom: 10px;
+    box-shadow: 6px 8px 0 0 #000000;
     transform: rotate(-5.82deg);
   }
   .tittle-container2 {
     text-align: center;
-    background-color: gainsboro;
+    background-color: $primary-color-yellow;
     padding: 10px;
+    font-size: 1.7rem;
+    font-weight: 100;
     box-shadow: 6px 8px 0 0 #000000;
     transform: rotate(-5.82deg);
   }
   .tittle-container3 {
     margin-top: 70px;
+    font-size: 40px;
     text-align: center;
     position: relative;
   }
@@ -72,34 +85,54 @@
     right: -180px;
     transform: translateY(-50%);
   }
-  .radio-container {
+  .radio-container1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
     color: #000000;
+    font-size: 40px;
     cursor: pointer;
   }
-  .radio-container input {
+  .radio-container1 input {
     margin-right: 20px;
   }
-  .radio-container label {
-    margin-right: 150px;
-    margin-left: 150px;
+  .radio-input1 {
+    width: 30px; /* Ajustez la largeur du bouton radio */
+    height: 30px; /* Ajustez la hauteur du bouton radio */
+  }
+  .radio-container1 label {
+    margin: 20px 50px;
   }
   .valide-button {
-    margin-top: 40px;
+    margin-top: 70px;
     margin-right: 10px;
     margin-left: 10px;
     padding: 10px 20px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    border-radius: 5px;
-    border: 1px solid #000000;
-    color: #000000;
-    background-color: gainsboro;
+    font-size: 3rem;
+    font-weight: 200;
+    width: 285px;
+    height: 69px;
+    color: #ffffff;
+    border: 1px $secondary-color-orange solid;
+    background-color: $secondary-color-orange;
     box-shadow: 6px 8px 0 0 #000000;
     cursor: pointer;
   }
+}
+
+.valide-button:hover {
+  box-shadow: none;
+  background: darken(#ff4001, 10%);
+}
+
+label {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 1200;
 }

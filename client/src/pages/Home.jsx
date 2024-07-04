@@ -41,11 +41,12 @@ function Home() {
           <h1>Une WonderTech dès maintenant</h1>
         </div>
         <div className="tittle-container3">
-          <h2>Je suis</h2>
+          <h2>JE SUIS</h2>
         </div>
-        <div className="radio-container">
+        <div className="radio-container1">
           <label>
             <input
+              className="radio-input1"
               type="radio"
               id="professionnelle"
               name="role"
@@ -58,6 +59,7 @@ function Home() {
 
           <label>
             <input
+              className="radio-input1"
               type="radio"
               id="employeur"
               name="role"
