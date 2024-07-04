@@ -26,9 +26,8 @@ class CandidateRepository extends AbstractRepository {
         softskills,
         description,
         contrat,
-        poste,
         mentor
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         candidate.name,
         candidate.firstname,
@@ -44,7 +43,6 @@ class CandidateRepository extends AbstractRepository {
         candidate.softskills,
         candidate.description,
         candidate.contrat,
-        candidate.poste,
         candidate.mentor,
       ]
     );
@@ -81,7 +79,6 @@ class CandidateRepository extends AbstractRepository {
         softskills = ?,
         description = ?,
         contrat = ?,
-        poste = ?,
         mentor = ? 
       WHERE id = ?`,
       [
@@ -99,7 +96,6 @@ class CandidateRepository extends AbstractRepository {
         candidate.softskills,
         candidate.description,
         candidate.contrat,
-        candidate.poste,
         candidate.mentor,
         candidate.id,
       ]

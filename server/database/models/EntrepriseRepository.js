@@ -13,7 +13,7 @@ class EntrepriseRepository extends AbstractRepository {
     // Execute the SQL INSERT query to add a new Entreprise to the "Entreprise" table
     const [result] = await this.database.query(
       `insert into ${this.table} (
-      name,
+      image,
       raison_sociale,
       location,
       secteur,
@@ -30,7 +30,7 @@ class EntrepriseRepository extends AbstractRepository {
       poste
       ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
-        entreprise.name,
+        entreprise.image,
         entreprise.raison_sociale,
         entreprise.location,
         entreprise.secteur,
@@ -79,7 +79,7 @@ class EntrepriseRepository extends AbstractRepository {
   async update(entreprise) {
     const [edit] = await this.database.query(
       `update ${this.table} set
-      name =?,
+      image =?,
       raison_sociale =?,
       location =?,
       secteur =?,
@@ -95,7 +95,7 @@ class EntrepriseRepository extends AbstractRepository {
       contrat =?,
       poste =? where id =?`,
       [
-        entreprise.name,
+        entreprise.image,
         entreprise.raison_sociale,
         entreprise.location,
         entreprise.secteur,
