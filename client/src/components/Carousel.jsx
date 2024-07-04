@@ -5,14 +5,18 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Styles/slick-custom.css";
+import { NextArrow, PrevArrow } from "./Arrows";
 
 function Carousel({ items, renderItem }) {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 1,
+    centerMode: true,
+    centerPadding: "0px",
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return (
