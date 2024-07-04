@@ -4,20 +4,22 @@ import { useState } from "react";
 function Connexion() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userType, setUserType] = useState("candidate");
+  const [userType, setUserType] = useState("candidate"); // Par défaut, connexion pour les candidats
   const navigate = useNavigate();
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
-  const handleUserTypeChange = (e) => setUserType(e.target.value);
 
   const handleValidation = async () => {
     try {
-      const apiUrl = "http://localhost:3310/api/";
-      const endpoint =
-        userType === "entreprise" ? "entreprise/login" : "candidate/login";
+      let loginUrl = "";
+      if (userType === "candidate") {
+        loginUrl = "http://localhost:3310/api/candidate/login";
+      } else if (userType === "enterprise") {
+        loginUrl = "http://localhost:3310/api/entreprise/login";
+      }
 
-      const response = await fetch(`${apiUrl}${endpoint}`, {
+      const response = await fetch(loginUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,10 +31,15 @@ function Connexion() {
         throw new Error("Email ou mot de passe incorrect !");
       }
 
+      const userData = await response.json();
+      const storageKey =
+        userType === "candidate" ? "loggedInCandidate" : "loggedInEnterprise";
+      localStorage.setItem(storageKey, JSON.stringify(userData));
+
       if (userType === "candidate") {
         navigate("/profil");
-      } else if (userType === "entreprise") {
-        navigate("/profilentreprise");
+      } else if (userType === "enterprise") {
+        navigate("/profil/profilentreprise");
       }
     } catch (error) {
       alert(error.message);
@@ -46,12 +53,6 @@ function Connexion() {
       </Link>
       <div className="connexion-container">
         <div className="form-container">
-          <div>
-            <select value={userType} onChange={handleUserTypeChange}>
-              <option value="candidate">Candidat</option>
-              <option value="entreprise">Entreprise</option>
-            </select>
-          </div>
           <div>
             <input
               type="email"
@@ -67,6 +68,18 @@ function Connexion() {
               onChange={handlePasswordChange}
               placeholder="Mot de passe"
             />
+          </div>
+          <div>
+            <label>
+              Type d'utilisateur:
+              <select
+                value={userType}
+                onChange={(e) => setUserType(e.target.value)}
+              >
+                <option value="candidate">Candidat</option>
+                <option value="enterprise">Entreprise</option>
+              </select>
+            </label>
           </div>
           <button
             className="button-validate-co"
