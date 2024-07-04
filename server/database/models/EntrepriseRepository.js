@@ -70,7 +70,7 @@ class EntrepriseRepository extends AbstractRepository {
   }
 
   async update(entreprise) {
-    const [edit] = await this.database.query(
+    const [result] = await this.database.query(
       `update ${this.table} set
       image =?,
       raisonSociale =?,
