@@ -22,7 +22,7 @@ CREATE TABLE candidate (
 CREATE TABLE entreprise (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
   image VARCHAR(255),
-  raison_sociale VARCHAR(50) NOT NULL,
+  raisonSociale VARCHAR(50) NOT NULL,
   location VARCHAR(255) NOT NULL,
   secteur VARCHAR(50) NOT NULL,
   siret BIGINT UNSIGNED NOT NULL,
@@ -72,7 +72,7 @@ VALUES
 ('Keira', 'Ellery', 'Data Scientist', 'Keira.Ellery@gmail.com', '391 857 6454', false, 'https://res.cloudinary.com/dxzcuuil8/image/upload/v1720033898/Hackathon3/candidates_comics/rbv1mauydrhlldxfkfhm.webp', 'https://morales.com/', 'UmlDJeRh', 'AWS, JavaScript, Git, Go', "Data Scientist avec une expertise en apprentissage automatique et en analyse de données. Expérimenté dans la conception et la mise en œuvre de modèles prédictifs pour résoudre des problèmes commerciaux complexes.", 'Saint Clarice', 'https://github.com/keira.ellery', 'Communication, Résolution de conflits, Leadership', 'Freelance, CDI');
 
 
-INSERT INTO entreprise (image, raison_sociale, location, secteur, siret, lastname, firstname, fonction, telephone, email, password, technologie, profession, contrat, poste)
+INSERT INTO entreprise (image, raisonSociale, location, secteur, siret, lastname, firstname, fonction, telephone, email, password, technologie, profession, contrat, poste)
 VALUES
 ('https://companieslogo.com/img/128/MC.PA-db2b6829.png?t=1633207758', 'LVMH', 'Raymond-les-Bains', 'Chimie', 47964969523648, 'François', 'Susan', 'Recruteur freelance', '3105903913', 'lvmh@email.fr', '}@N$ra3u', 'Go, React, Kubernetes, Pandas, Vue.js', 'Manager Data', 'Alternance', 'Administrateur réseau'),
 ('https://companieslogo.com/img/128/RMS.PA-8eb334f4.png?t=1633223074', 'Hermès', 'Sainte Vincent', 'Éducation', 75246588453461, 'Toussaint', 'Marine', 'Responsable de l\'intégration des nouveaux employés', '7450306711', 'hermes@email.fr', 'MfyA.nt3', 'Keras, Azure, PostgreSQL', 'Designer', 'Stage', 'Architecte logiciel'),

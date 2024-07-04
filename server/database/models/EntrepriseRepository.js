@@ -14,7 +14,7 @@ class EntrepriseRepository extends AbstractRepository {
     const [result] = await this.database.query(
       `insert into ${this.table} (
       image,
-      raison_sociale,
+      raisonSociale,
       location,
       secteur,
       siret,
@@ -31,7 +31,7 @@ class EntrepriseRepository extends AbstractRepository {
       ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         entreprise.image,
-        entreprise.raison_sociale,
+        entreprise.raisonSociale,
         entreprise.location,
         entreprise.secteur,
         entreprise.siret,
@@ -80,7 +80,7 @@ class EntrepriseRepository extends AbstractRepository {
     const [edit] = await this.database.query(
       `update ${this.table} set
       image =?,
-      raison_sociale =?,
+      raisonSociale =?,
       location =?,
       secteur =?,
       siret =?,
@@ -96,7 +96,7 @@ class EntrepriseRepository extends AbstractRepository {
       poste =? where id =?`,
       [
         entreprise.image,
-        entreprise.raison_sociale,
+        entreprise.raisonSociale,
         entreprise.location,
         entreprise.secteur,
         entreprise.siret,
