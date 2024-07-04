@@ -1,12 +1,19 @@
+.bodyHome {
+  background-image: url("../src/assets/images/fond_home.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
 .buttonconnexion-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-top: 40px;
-  margin-right: 40px;
+  padding-top: 40px;
+  padding-right: 40px;
   .button-connexion {
-    margin-right: 10px;
-    margin-left: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
     padding: 10px 20px;
     font-size: 1.2rem;
     font-weight: 600;
@@ -23,8 +30,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
 
   .tittle-container1 {
     background-color: gainsboro;

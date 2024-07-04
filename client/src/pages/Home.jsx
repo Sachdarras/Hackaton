@@ -25,7 +25,7 @@ function Home() {
   };
 
   return (
-    <>
+    <div className="bodyHome">
       <div className="buttonconnexion-container">
         <Link to="/connexion">
           <button className="button-connexion" type="button">
@@ -76,7 +76,7 @@ function Home() {
           Valider
         </button>
       </div>
-    </>
+    </div>
   );
 }
 
