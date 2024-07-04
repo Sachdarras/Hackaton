@@ -15,6 +15,9 @@ function Nav() {
             <Link to="/profil">Mon profil</Link>
           </li>
           <li>
+            <Link to="/match">Mes Matchs</Link>
+          </li>
+          <li>
             <Link to="/">Se déconnecter</Link>
           </li>
         </ul>
