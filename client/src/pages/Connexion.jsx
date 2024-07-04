@@ -26,11 +26,10 @@ function Connexion() {
         throw new Error("Email ou mot de passe incorrect !");
       }
 
-      const candidateData = await response.json();
-
-      localStorage.setItem("candidateData", JSON.stringify(candidateData));
-
-      navigate("/profil");
+      const candidate = await response.json();
+      // Stocker les informations du candidat dans localStorage
+      localStorage.setItem("loggedInCandidate", JSON.stringify(candidate));
+      navigate("/profil"); // Rediriger vers la page de profil après connexion
     } catch (error) {
       alert(error.message);
     }

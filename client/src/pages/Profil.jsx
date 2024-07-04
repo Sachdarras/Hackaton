@@ -1,41 +1,36 @@
-function Profil() {
-  const candidate = {
-    Name: "Bridget",
-    Surname: "Stark",
-    Profession: "Developer",
-    Email: "Bridget.Stark@gmail.com",
-    Mobile: "471 582 3007",
-    Mentor: true,
-    Photo:
-      "https://res.cloudinary.com/dxzcuuil8/image/upload/v1720033898/Hackathon3/candidates_comics/tzqrdwa3vucb13zgaqxs.webp",
-    Portfolio: "https://www.bell.net/",
-    Password: "m-vrKU[k",
-    HardSkills: "Vue.js, Go, Linux, Pandas, Kotlin",
-    Description:
-      "Développeur Full-stack passionné par la création d'applications web robustes. Expérimenté en développement front-end et back-end utilisant des technologies telles que JavaScript, Python et Java.",
-    Location: "Saint Deniseboeuf",
-    GitHub: "https://github.com/bridget.stark",
-    SoftSkills: "Prise de parole en public, Communication, Pensée stratégique",
-    Contrat: "CDD, Freelance, CDI",
-  };
+import { useEffect, useState } from "react";
 
-  const hardSkills = candidate.HardSkills.split(", ");
-  const softSkills = candidate.SoftSkills.split(", ");
-  const typesContrat = candidate.Contrat.split(", ");
+function Profil() {
+  const [candidate, setCandidate] = useState(null);
+
+  useEffect(() => {
+    const loggedInCandidate = localStorage.getItem("loggedInCandidate");
+    if (loggedInCandidate) {
+      setCandidate(JSON.parse(loggedInCandidate));
+    }
+  }, []);
+
+  if (!candidate) {
+    return <div>Loading...</div>;
+  }
+
+  const hardSkills = candidate.hardskills.split(", ");
+  const softSkills = candidate.softskills.split(", ");
+  const typesContrat = candidate.contrat.split(", ");
 
   return (
     <>
       <div className="information-container">
         <ul>
           <li>
-            <img src={candidate.Photo} alt="avatar" />
+            <img src={candidate.photo} alt="avatar" />
           </li>
-          <li>{`${candidate.Name} ${candidate.Surname}`}</li>
-          <li>{candidate.Location}</li>
-          <li>{candidate.Mobile}</li>
+          <li>{`${candidate.name} ${candidate.surname}`}</li>
+          <li>{candidate.location}</li>
+          <li>{candidate.mobile}</li>
           <li>
             <a
-              href={candidate.GitHub}
+              href={candidate.github}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -44,7 +39,7 @@ function Profil() {
           </li>
           <li>
             <a
-              href={candidate.Portfolio}
+              href={candidate.portfolio}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -55,15 +50,15 @@ function Profil() {
       </div>
       <div className="skills-container">
         <h2>Description</h2>
-        <p>{candidate.Description}</p>
+        <p>{candidate.description}</p>
         <h2>Métier</h2>
         <ul>
-          <li className="job-tag">{candidate.Profession}</li>
+          <li className="job-tag">{candidate.profession}</li>
         </ul>
         <h2>Hard Skills</h2>
         <ul className="skills-list">
           {hardSkills.map((skill) => (
-            <li key={skill} className="skill-tag">
+            <li key={`hardSkill-${skill}`} className="skill-tag">
               {skill}
             </li>
           ))}
@@ -71,7 +66,7 @@ function Profil() {
         <h2>Soft Skills</h2>
         <ul className="skills-list">
           {softSkills.map((skill) => (
-            <li key={skill} className="skill-tag">
+            <li key={`softSkill-${skill}`} className="skill-tag">
               {skill}
             </li>
           ))}
@@ -79,7 +74,7 @@ function Profil() {
         <h2>Recherche</h2>
         <ul className="skills-list">
           {typesContrat.map((type) => (
-            <li key={type.trim()} className="skill-tag">
+            <li key={`typeContrat-${type}`} className="skill-tag">
               {type.trim()}
             </li>
           ))}
