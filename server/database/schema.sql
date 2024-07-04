@@ -7,22 +7,21 @@ CREATE TABLE candidate (
   ville VARCHAR(50) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
   password VARCHAR(40) NOT NULL,
-  github TEXT NOT NULL,
-  portfolio TEXT NOT NULL,
-  photo TEXT NOT NULL,
+  github TEXT,
+  portfolio TEXT,
+  photo TEXT,
   profession VARCHAR(50) NOT NULL,
   hardskills TEXT NOT NULL,
   softskills TEXT NOT NULL,
-  description TEXT NOT NULL,
+  description TEXT,
   contrat VARCHAR(50) NOT NULL,
-  poste VARCHAR(70) NOT NULL,
   mentor BOOLEAN NOT NULL
 );
 
 -- Table Entreprise
 CREATE TABLE entreprise (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  name VARCHAR(70) NOT NULL,
+  image VARCHAR(255),
   raison_sociale VARCHAR(50) NOT NULL,
   location VARCHAR(255) NOT NULL,
   secteur VARCHAR(50) NOT NULL,
