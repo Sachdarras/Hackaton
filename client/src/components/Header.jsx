@@ -1,5 +1,11 @@
+import Nav from "./Nav";
+
 function Header() {
-  return <h1>Hello Home</h1>;
+  return (
+    <div>
+      <Nav />
+    </div>
+  );
 }
 
 export default Header;
