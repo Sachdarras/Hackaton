@@ -26,6 +26,10 @@ function Connexion() {
         throw new Error("Email ou mot de passe incorrect !");
       }
 
+      const candidateData = await response.json();
+
+      localStorage.setItem("candidateData", JSON.stringify(candidateData));
+
       navigate("/profil");
     } catch (error) {
       alert(error.message);
