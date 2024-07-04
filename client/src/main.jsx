@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import RegisterCompany from "./pages/RegisterCompany";
 import RegisterUser from "./pages/RegisterUser";
 import Connexion from "./pages/Connexion";
+import ProfilEntreprise from "./pages/ProfilEntreprise"; // Assurez-vous que ce fichier contient bien le composant attendu
 
 // Pages avec Outlet
 import Profil from "./pages/Profil";
@@ -33,8 +34,12 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/profil",
+        path: "",
         element: <Profil />,
+      },
+      {
+        path: "profilentreprise",
+        element: <ProfilEntreprise />,
       },
     ],
   },
