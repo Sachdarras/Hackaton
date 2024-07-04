@@ -3,14 +3,12 @@ const AbstractRepository = require("./AbstractRepository");
 class EntrepriseRepository extends AbstractRepository {
   constructor() {
     // Call the constructor of the parent class (AbstractRepository)
-    // and pass the table name "Entreprise" as configuration
+    // and pass the table name "entreprise" as configuration
     super({ table: "entreprise" });
   }
 
-  // The C of CRUD - Create operation
-
   async create(entreprise) {
-    // Execute the SQL INSERT query to add a new Entreprise to the "Entreprise" table
+    // Execute the SQL INSERT query to add a new entreprise to the "entreprise" table
     const [result] = await this.database.query(
       `insert into ${this.table} (
       image,
@@ -48,33 +46,28 @@ class EntrepriseRepository extends AbstractRepository {
       ]
     );
 
-    // Return the ID of the newly inserted Entreprise
+    // Return the ID of the newly inserted entreprise
     return result.insertId;
   }
 
-  // The Rs of CRUD - Read operations
-
   async read(id) {
-    // Execute the SQL SELECT query to retrieve a specific Entreprise by its ID
+    // Execute the SQL SELECT query to retrieve a specific entreprise by its ID
     const [rows] = await this.database.query(
-      `select * from ${this.table} where id = ?`,
+      `SELECT * FROM ${this.table} WHERE id = ?`,
       [id]
     );
 
-    // Return the first row of the result, which represents the Entreprise
+    // Return the first row of the result, which represents the entreprise
     return rows[0];
   }
 
   async readAll() {
-    // Execute the SQL SELECT query to retrieve all Entreprises from the "Entreprise" table
-    const [rows] = await this.database.query(`select * from ${this.table}`);
+    // Execute the SQL SELECT query to retrieve all entreprises from the "entreprise" table
+    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
 
-    // Return the array of Entreprise
+    // Return the array of entreprises
     return rows;
   }
-
-  // The U of CRUD - Update operation
-  // TODO: Implement the update operation to modify an existing Entreprise
 
   async update(entreprise) {
     const [edit] = await this.database.query(
@@ -110,21 +103,31 @@ class EntrepriseRepository extends AbstractRepository {
         entreprise.profession,
         entreprise.contrat,
         entreprise.poste,
+        entreprise.id,
       ]
     );
-    return edit;
+
+    return result;
   }
 
-  // The D of CRUD - Delete operation
-  // TODO: Implement the delete operation to remove an Entreprise by its ID
-
   async delete(id) {
-    // Execute the SQL DELETE query to remove an user from the "Entreprise" table
-    const [destroy] = await this.database.query(
-      `delete from ${this.table} where id = ?`,
+    // Execute the SQL DELETE query to remove an entreprise from the "entreprise" table
+    const [result] = await this.database.query(
+      `DELETE FROM ${this.table} WHERE id = ?`,
       [id]
     );
-    return destroy;
+
+    return result;
+  }
+
+  async authenticate(email, password) {
+    // Execute the SQL SELECT query to authenticate an entreprise
+    const [rows] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE email = ? AND password = ?`,
+      [email, password]
+    );
+
+    return rows[0]; // Return the entreprise found or undefined
   }
 }
 
