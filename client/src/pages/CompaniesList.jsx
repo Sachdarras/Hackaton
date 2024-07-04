@@ -1,12 +1,17 @@
 import CompanyCarousel from "../components/CompanyCarousel";
 import HeaderMatchs from "../components/HeaderMatchs";
+import "../main.scss";
 
 function CompaniesList() {
   return (
-    <div className="carousel-container">
+    <>
       <HeaderMatchs />
-      <CompanyCarousel />
-    </div>
+      <div className="background-page">
+        <div className="carousel-container">
+          <CompanyCarousel />
+        </div>
+      </div>
+    </>
   );
 }
 export default CompaniesList;
