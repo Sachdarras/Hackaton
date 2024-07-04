@@ -1,4 +1,4 @@
-// Import access to database tables
+/* eslint-disable consistent-return */
 const tables = require("../../database/tables");
 
 // The B of BREAD - Browse (Read All) operation
@@ -22,12 +22,12 @@ const read = async (req, res, next) => {
     const entreprise = await tables.entreprise.read(req.params.id);
 
     // If the entreprise is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the entreprise in JSON format
     if (entreprise == null) {
-      res.sendStatus(404);
-    } else {
-      res.json(entreprise);
+      return res.sendStatus(404);
     }
+
+    // Respond with the entreprise in JSON format
+    return res.json(entreprise);
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);
@@ -42,30 +42,22 @@ const edit = async (req, res, next) => {
     // Fetch a specific entreprise from the database based on the provided ID
     await tables.entreprise.update(entreprise);
 
-    // If the entreprise is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the entreprise in JSON format
-    if (entreprise == null) {
-      res.sendStatus(404);
-    } else {
-      res.sendStatus(204);
-    }
+    // Respond with HTTP 204 (No Content) to indicate success
+    return res.sendStatus(204);
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);
   }
 };
-// This operation is not yet implemented
 
 // The A of BREAD - Add (Create) operation
 const add = async (req, res, next) => {
-  // Extract the entreprise data from the request body
-
   try {
     // Insert the entreprise into the database
     const insertId = await tables.entreprise.create(req.body);
 
     // Respond with HTTP 201 (Created) and the ID of the newly inserted entreprise
-    res.status(201).json({ insertId });
+    return res.status(201).json({ insertId });
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);
@@ -76,21 +68,31 @@ const add = async (req, res, next) => {
 const destroy = async (req, res, next) => {
   try {
     // Fetch a specific entreprise from the database based on the provided ID
-    const entreprise = await tables.entreprise.delete(req.params.id);
+    await tables.entreprise.delete(req.params.id);
 
-    // If the entreprise is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the entreprise in JSON format
-    if (entreprise == null) {
-      res.sendStatus(404);
-    } else {
-      res.sendStatus(204);
-    }
+    // Respond with HTTP 204 (No Content) to indicate success
+    return res.sendStatus(204);
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);
   }
 };
-// This operation is not yet implemented
+
+// Authentication operation for entreprise
+const authenticate = async (req, res, next) => {
+  const { email, password } = req.body;
+  try {
+    const entreprise = await tables.entreprise.authenticate(email, password);
+    if (!entreprise) {
+      return res
+        .status(401)
+        .json({ error: "Email ou mot de passe incorrect." });
+    }
+    return res.status(200).json(entreprise);
+  } catch (err) {
+    next(err);
+  }
+};
 
 // Ready to export the controller functions
 module.exports = {
@@ -99,4 +101,5 @@ module.exports = {
   edit,
   add,
   destroy,
+  authenticate,
 };

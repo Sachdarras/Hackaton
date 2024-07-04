@@ -2,10 +2,6 @@ const express = require("express");
 
 const router = express.Router();
 
-/* ************************************************************************* */
-// Define Your API Routes Here
-/* ************************************************************************* */
-
 // Import entreprise-related actions
 const {
   browse,
@@ -13,6 +9,7 @@ const {
   edit,
   add,
   destroy,
+  authenticate, // Import de la fonction d'authentification des entreprises
 } = require("../../../controllers/entrepriseActions");
 
 // Route to get a list of entreprises
@@ -30,6 +27,7 @@ router.post("/", add);
 // Route to remove a new entreprise by ID
 router.delete("/:id", destroy);
 
-/* ************************************************************************* */
+// Route d'authentification des entreprises
+router.post("/login", authenticate);
 
 module.exports = router;
