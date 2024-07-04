@@ -18,7 +18,9 @@
   margin: 0;
   padding: 0;
 }
-
+html {
+  background-color: #ffebd0;
+}
 .bangers-regular {
   font-family: "Bangers", system-ui;
   font-weight: 400;
@@ -26,12 +28,13 @@
 }
 
 h1,
-button {
+h2,
+button,
+li {
   font-family: "Bangers", system-ui;
 }
 
 p,
-h2,
 label {
   font-family: "proxima_nova";
 }
