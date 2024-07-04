@@ -13,9 +13,9 @@ class CandidateRepository extends AbstractRepository {
     const [result] = await this.database.query(
       `INSERT INTO ${this.table} (
         name,
-        firstname,
-        telephone,
-        ville,
+        surname,
+        mobile,
+        location,
         email,
         password,
         github,
@@ -30,9 +30,9 @@ class CandidateRepository extends AbstractRepository {
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         candidate.name,
-        candidate.firstname,
-        candidate.telephone,
-        candidate.ville,
+        candidate.surname,
+        candidate.mobile,
+        candidate.location,
         candidate.email,
         candidate.password,
         candidate.github,
@@ -66,9 +66,9 @@ class CandidateRepository extends AbstractRepository {
     const [result] = await this.database.query(
       `UPDATE ${this.table} SET 
         name = ?,
-        firstname = ?,
-        telephone = ?,
-        ville = ?,
+        surname = ?,
+        mobile = ?,
+        location = ?,
         email = ?,
         password = ?,
         github = ?,
@@ -83,9 +83,9 @@ class CandidateRepository extends AbstractRepository {
       WHERE id = ?`,
       [
         candidate.name,
-        candidate.firstname,
-        candidate.telephone,
-        candidate.ville,
+        candidate.surname,
+        candidate.mobile,
+        candidate.location,
         candidate.email,
         candidate.password,
         candidate.github,
