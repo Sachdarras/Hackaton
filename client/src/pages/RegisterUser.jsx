@@ -104,7 +104,7 @@ function RegisterUser() {
             </div>
             <div className="formGroup div3">
               <label className="formLabel" htmlFor="telephone">
-              Téléphone
+                Téléphone
               </label>
               <input
                 type="text"
@@ -154,31 +154,31 @@ function RegisterUser() {
                 required
               />
             </div>
-          <div className="formGroup div7">
-            <label className="formLabel" htmlFor="github">
-              Lien Github
-            </label>
-            <input
-              type="text"
-              id="github"
-              placeholder="Lien de votre github"
-              value={github}
-              onChange={(e) => setGithub(e.target.value)}
-            />
+            <div className="formGroup div7">
+              <label className="formLabel" htmlFor="github">
+                Lien Github
+              </label>
+              <input
+                type="text"
+                id="github"
+                placeholder="Lien de votre github"
+                value={github}
+                onChange={(e) => setGithub(e.target.value)}
+              />
+            </div>
+            <div className="formGroup div8">
+              <label className="formLabel" htmlFor="portfolio">
+                Lien Portfolio
+              </label>
+              <input
+                type="text"
+                id="portfolio"
+                placeholder="Lien de votre portfolio"
+                value={portfolio}
+                onChange={(e) => setPortfolio(e.target.value)}
+              />
+            </div>
           </div>
-          <div className="formGroup div8">
-            <label className="formLabel" htmlFor="portfolio">
-              Lien Portfolio
-            </label>
-            <input
-              type="text"
-              id="portfolio"
-              placeholder="Lien de votre portfolio"
-              value={portfolio}
-              onChange={(e) => setPortfolio(e.target.value)}
-            />
-          </div>
-        </div>
           {/* <h1 className="formTitle1">Photo de profil</h1>
         <div className="formGroup">
           <label className="formLabel" htmlFor="photo">Avatar</label>
@@ -191,80 +191,80 @@ function RegisterUser() {
             // accept="image/png, image/jpeg, image/svg"
           />
         </div> */}
-        <div className="bloc2">
-          <h1 className="formTitle2">Métier et compétences</h1>
-          <div className="grid2">
-          <div className="formGroup">
-            <label className="formLabel" htmlFor="profession">
-              Votre profession
-            </label>
-            <input
-              type="text"
-              id="profession"
-              placeholder="Quel est votre profession ?"
-              value={profession}
-              onChange={(e) => setProfession(e.target.value)}
-              required
-            />
-          </div>
-          <div className="formGroup">
-            <label className="formLabel" htmlFor="hardskills">
-              Hard Skills
-            </label>
-            <input
-              type="text"
-              id="hardskills"
-              placeholder="Quels sont vos Hard skills ?"
-              value={hardskills}
-              onChange={(e) => setHardskills(e.target.value)}
-              required
-            />
-          </div>
-          <div className="formGroup">
-            <label className="formLabel" htmlFor="softskills">
-              Soft Skills
-            </label>
-            <input
-              type="text"
-              id="softskills"
-              placeholder="Quels sont vos Soft skills ?"
-              value={softskills}
-              onChange={(e) => setSoftskills(e.target.value)}
-              required
-            />
-          </div>
-          <div className="formGroup">
-            <label className="formLabel" htmlFor="description">
-              Description
-            </label>
-            <input
-              type="text"
-              id="description"
-              placeholder="Une petite description ?"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-          </div>
-          </div>
+          <div className="bloc2">
+            <h1 className="formTitle2">Métier et compétences</h1>
+            <div className="grid2">
+              <div className="formGroup">
+                <label className="formLabel" htmlFor="profession">
+                  Votre profession
+                </label>
+                <input
+                  type="text"
+                  id="profession"
+                  placeholder="Quel est votre profession ?"
+                  value={profession}
+                  onChange={(e) => setProfession(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="formGroup">
+                <label className="formLabel" htmlFor="hardskills">
+                  Hard Skills
+                </label>
+                <input
+                  type="text"
+                  id="hardskills"
+                  placeholder="Quels sont vos Hard skills ?"
+                  value={hardskills}
+                  onChange={(e) => setHardskills(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="formGroup">
+                <label className="formLabel" htmlFor="softskills">
+                  Soft Skills
+                </label>
+                <input
+                  type="text"
+                  id="softskills"
+                  placeholder="Quels sont vos Soft skills ?"
+                  value={softskills}
+                  onChange={(e) => setSoftskills(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="formGroup">
+                <label className="formLabel" htmlFor="description">
+                  Description
+                </label>
+                <input
+                  type="text"
+                  id="description"
+                  placeholder="Une petite description ?"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+              </div>
+            </div>
           </div>
           <div className="bloc3">
-          <h1 className="formTitle3">Je recherche</h1>
-          <div className="formGroup">
-            <label className="formLabel" htmlFor="contrat">
-              Type de contrat
-            </label>
-            <input
-              type="text"
-              id="contrat"
-              placeholder="Quel type de contrat recherchez vous ?"
-              value={contrat}
-              onChange={(e) => setContrat(e.target.value)}
-              required
-            />
-          </div>
-          <button className="account-button" type="submit">
-            Valider
-          </button>
+            <h1 className="formTitle3">Je recherche</h1>
+            <div className="formGroup">
+              <label className="formLabel" htmlFor="contrat">
+                Type de contrat
+              </label>
+              <input
+                type="text"
+                id="contrat"
+                placeholder="Quel type de contrat recherchez vous ?"
+                value={contrat}
+                onChange={(e) => setContrat(e.target.value)}
+                required
+              />
+            </div>
+            <button className="account-button" type="submit">
+              Valider
+            </button>
           </div>
         </form>
       </div>
