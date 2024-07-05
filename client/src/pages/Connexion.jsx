@@ -42,6 +42,7 @@ function Connexion() {
         navigate("/companies");
       } else if (userType === "enterprise") {
         navigate("/users");
+
       }
     } catch (error) {
       alert(error.message);

@@ -140,6 +140,7 @@ function RegisterCompany() {
             />
           </div>
           <h1 className="formTitleContact">Contact</h1>
+
           <div className="formGroup1">
             <label className="formLabel" htmlFor="lastname">
               Nom
@@ -180,6 +181,7 @@ function RegisterCompany() {
             />
           </div>
           <h1 className="formTitlePdf">Photo de profil</h1>
+
           <div className="formGroup1">
             <label className="formLabel" htmlFor="telephone">
               Téléphone
@@ -220,6 +222,7 @@ function RegisterCompany() {
             />
           </div>
           <h1 className="formTitleUse">Nous utilisons</h1>
+
           <div className="formGroup1">
             <label className="formLabel" htmlFor="technologie">
               Technologie
@@ -247,6 +250,7 @@ function RegisterCompany() {
             />
           </div>
           <h1 className="formTitleSearch">Nous recherchons</h1>
+
           <div className="formGroup1">
             <label className="formLabel" htmlFor="contrat">
               Type de contrat
