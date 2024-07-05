@@ -23,7 +23,8 @@ function HeaderMatchs() {
       </div>
       <div className="header-item">
         <div className="profil-texte">
-          <Link to="/profile">Mon profil</Link>
+          <Link to="/profil">Mon profil</Link>
+          <Link to="/profil/profilentreprise">Mon profil Entrerpise</Link>
         </div>
         <button type="button" className="logout-button">
           SE DÉCONNECTER
