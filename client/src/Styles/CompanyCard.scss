@@ -1,6 +1,11 @@
 .company-card {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
   width: 100%;
   height: 400px;
+  padding: 50px;
+  margin-bottom: 30px;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -9,7 +14,6 @@
   width: 200px;
   margin: 0 auto;
   text-align: center;
-  color: #fff;
 
   .company-card-header {
     display: flex;

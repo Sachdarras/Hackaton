@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import logo from "../assets/images/logo.webp";
+import leftarrow from "../assets/Flecheleft.png";
 
 import "../main.scss";
 
@@ -61,9 +63,9 @@ function RegisterCompany() {
     <>
       <div className="headFormCompany">
         <Link to="/">
-          <span>Retour</span>
+          <img className="leftarrow" src={leftarrow} alt="leftarrow" />
         </Link>
-        <img src="#" alt="logo" />
+        <img src={logo} alt="logo" />
         <Link to="/connexion">
           <button className="button-connexion" type="button">
             Connexion
@@ -137,7 +139,7 @@ function RegisterCompany() {
               required
             />
           </div>
-          <h1 className="formTitle">Contact</h1>
+          <h1 className="formTitleContact">Contact</h1>
           <div className="formGroup">
             <label className="formLabel" htmlFor="lastname">
               Nom
@@ -177,7 +179,7 @@ function RegisterCompany() {
               required
             />
           </div>
-          <h1 className="formTitle">Photo de profil</h1>
+          <h1 className="formTitlePdf">Photo de profil</h1>
           <div className="formGroup">
             <label className="formLabel" htmlFor="telephone">
               Téléphone
@@ -217,7 +219,7 @@ function RegisterCompany() {
               required
             />
           </div>
-          <h1 className="formTitle">Nous utilisons</h1>
+          <h1 className="formTitleUse">Nous utilisons</h1>
           <div className="formGroup">
             <label className="formLabel" htmlFor="technologie">
               Technologie
@@ -244,7 +246,7 @@ function RegisterCompany() {
               required
             />
           </div>
-          <h1 className="formTitle">Nous recherchons</h1>
+          <h1 className="formTitleSearch">Nous recherchons</h1>
           <div className="formGroup">
             <label className="formLabel" htmlFor="contrat">
               Type de contrat

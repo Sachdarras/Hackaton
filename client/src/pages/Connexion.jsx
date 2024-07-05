@@ -39,9 +39,9 @@ function Connexion() {
       localStorage.setItem(storageKey, JSON.stringify(userData));
 
       if (userType === "candidate") {
-        navigate("/profil");
+        navigate("/users");
       } else if (userType === "enterprise") {
-        navigate("/profil/profilentreprise");
+        navigate("/companies");
       }
     } catch (error) {
       alert(error.message);

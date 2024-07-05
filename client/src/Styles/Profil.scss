@@ -2,6 +2,11 @@
   font-family: "proxima_nova";
   src: url("../src/assets/images/Demo_Fonts/Fontspring-DEMO-proximanova-regular.otf");
 }
+.bg-profil {
+  background-image: url("../../src/assets/background-profil5.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .information-container {
   max-width: 100vw;
   margin: 0 auto;
