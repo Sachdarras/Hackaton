@@ -22,14 +22,12 @@ function HeaderMatchs() {
         </Link>
       </div>
       <div className="header-item">
-        <div>
+        <div className="profil-texte">
           <Link to="/profile">Mon profil</Link>
         </div>
-        <div>
-          <button type="button" className="logout-button">
-            SE DÉCONNECTER
-          </button>
-        </div>
+        <button type="button" className="logout-button">
+          SE DÉCONNECTER
+        </button>
       </div>
     </header>
   );

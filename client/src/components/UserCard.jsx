@@ -17,10 +17,11 @@ function UserCard({ user }) {
           <h3>
             {user.name} {user.surname}
           </h3>
-          <p>{user.profession}</p>
+          <h4>{user.profession}</h4>
         </div>
         <img className="user-photo" src={user.photo} alt={user.name} />
       </div>
+      <p className="user-card-texte">{user.description}</p>
     </div>
   );
 }
