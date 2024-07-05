@@ -6,7 +6,7 @@ function HeaderMatchs() {
   return (
     <header className="header-matches">
       <div className="header-item">
-        <Link to="/matches">
+        <Link to="/match">
           Mes matchs <span className="match-count">1</span>
         </Link>
       </div>
