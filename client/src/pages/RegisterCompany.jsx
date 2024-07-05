@@ -75,7 +75,7 @@ function RegisterCompany() {
       <div className="formCompany">
         <h1 className="formTitle">Nous sommes</h1>
         <form onSubmit={handleAddCompany}>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="image">
               Image
             </label>
@@ -87,7 +87,7 @@ function RegisterCompany() {
               onChange={(e) => setImage(e.target.value)}
             />
           </div>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="raisonSociale">
               Raison sociale
             </label>
@@ -100,7 +100,7 @@ function RegisterCompany() {
               required
             />
           </div>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="location">
               Ville
             </label>
@@ -113,7 +113,7 @@ function RegisterCompany() {
               required
             />
           </div>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="secteur">
               Secteur d'activité
             </label>
@@ -126,7 +126,7 @@ function RegisterCompany() {
               required
             />
           </div>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="siret">
               N°Siret
             </label>
@@ -140,7 +140,7 @@ function RegisterCompany() {
             />
           </div>
           <h1 className="formTitleContact">Contact</h1>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="lastname">
               Nom
             </label>
@@ -153,7 +153,7 @@ function RegisterCompany() {
               required
             />
           </div>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="firstname">
               Prénom
             </label>
@@ -166,7 +166,7 @@ function RegisterCompany() {
               required
             />
           </div>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="fonction">
               Fonction
             </label>
@@ -180,7 +180,7 @@ function RegisterCompany() {
             />
           </div>
           <h1 className="formTitlePdf">Photo de profil</h1>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="telephone">
               Téléphone
             </label>
@@ -193,7 +193,7 @@ function RegisterCompany() {
               required
             />
           </div>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="email">
               Email
             </label>
@@ -206,7 +206,7 @@ function RegisterCompany() {
               required
             />
           </div>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="password">
               Mot de passe
             </label>
@@ -220,7 +220,7 @@ function RegisterCompany() {
             />
           </div>
           <h1 className="formTitleUse">Nous utilisons</h1>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="technologie">
               Technologie
             </label>
@@ -233,7 +233,7 @@ function RegisterCompany() {
               required
             />
           </div>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="profession">
               Métier
             </label>
@@ -247,7 +247,7 @@ function RegisterCompany() {
             />
           </div>
           <h1 className="formTitleSearch">Nous recherchons</h1>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="contrat">
               Type de contrat
             </label>
@@ -260,7 +260,7 @@ function RegisterCompany() {
               required
             />
           </div>
-          <div className="formGroup">
+          <div className="formGroup1">
             <label className="formLabel" htmlFor="poste">
               Type de poste
             </label>
