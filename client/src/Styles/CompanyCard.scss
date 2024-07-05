@@ -14,11 +14,19 @@
   width: 200px;
   margin: 0 auto;
   text-align: center;
-
+  h3,
+  h4 {
+    color: #fff;
+  }
+  h4 {
+    font-family: "proxima_nova";
+  }
   .company-card-header {
     display: flex;
     justify-content: space-between;
-
+    font-family: "Bangers", system-ui;
+    font-size: 30px;
+    position: relative;
     .company-card-body {
       display: flex;
       flex-direction: column;
